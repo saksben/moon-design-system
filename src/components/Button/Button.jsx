@@ -11,7 +11,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
     ? "storybook-button--primary"
     : "storybook-button--secondary";
   return (
-    <div>
+    <>
       <button
         type="button"
         className={["storybook-button", `storybook-button--${size}`, mode].join(
@@ -22,14 +22,22 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       >
         {label}
       </button>
-      <Theme>
-        <div className="bg-slate-500">
-          {/* test button to make sure it works */}
-          <button>Button</button>
-          <RadButton color="yellow" className="text-red-500">RadButton</RadButton>
-        </div>
-      </Theme>
-    </div>
+      <div className="bg-jiren">
+        {/* test button to make sure it works */}
+        <button>Button</button>{" "}
+      </div>
+      <div
+        style={{
+          width: 0, height: 0,
+        }}
+      >
+        <Theme>
+          <RadButton color="yellow" className="text-red-500">
+            RadButton
+          </RadButton>
+        </Theme>
+      </div>
+    </>
   );
 };
 

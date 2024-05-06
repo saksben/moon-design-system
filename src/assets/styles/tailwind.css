@@ -3,3 +3,12 @@
 
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --color-jiren: 50, 168, 82
+    }
+    :root[class~="dark"] {
+        --color-jiren: 235, 64, 52
+    }
+}
