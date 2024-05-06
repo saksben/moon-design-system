@@ -10,15 +10,27 @@ const preview = {
         date: /Date$/i,
       },
     },
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#FFFFFF',
+        },
+        {
+          name: 'dark',
+          value: '#0B0B0B',
+        }
+      ]
+    },
   },
 
   decorators: [withThemeByClassName({
       themes: {
           // nameOfTheme: 'classNameForTheme',
-          light: '',
+          light: 'light',
           dark: 'dark',
       },
-      defaultTheme: 'light',
   })]
 };
 

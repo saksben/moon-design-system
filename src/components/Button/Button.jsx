@@ -22,9 +22,53 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       >
         {label}
       </button>
-      <div className="bg-jiren">
+      <div className="bg-main-piccolo">
         {/* test button to make sure it works */}
-        <button>Button</button>{" "}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-jiren">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-hit">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-heles">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-beerus">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-goku">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-gohan">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-zeno">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-bulma">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-trunks">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-goten">
+        {/* test button to make sure it works */}
+        <button>Button</button>
+      </div>
+      <div className="bg-main-popo">
+        {/* test button to make sure it works */}
+        <button>Button</button>
       </div>
       <div
         style={{

@@ -5,10 +5,38 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --color-jiren: 50, 168, 82
-    }
-    :root[class~="dark"] {
-        --color-jiren: 235, 64, 52
-    }
+  :root {
+    --color-piccolo: 78, 70, 180;
+    --color-jiren: 78, 70, 180;
+    --color-hit: 64, 166, 159;
+    --color-heles: 0, 0, 0;
+    --color-beerus: 226, 226, 226;
+    --color-goku: 245, 245, 245;
+    --color-gohan: 255, 255, 255;
+    --color-zeno: 0, 0, 0;
+    --color-bulma: 0, 0, 0;
+    --color-trunks: 89, 93, 98;
+    --color-goten: 255, 255, 255; /*forced white*/
+    --color-popo: 0, 0, 0; /*forced black*/
+    --opacity-jiren: 0.12;
+    --opacity-heles: 0.04;
+    --opacity-zeno: 0.56;
+  }
+  :root[class~="dark"] {
+    --color-piccolo: 78, 70, 180;
+    --color-jiren: 78, 70, 180;
+    --color-hit: 64, 166, 159;
+    --color-heles: 255, 255, 255;
+    --color-beerus: 68, 68, 68;
+    --color-goku: 11, 11, 11;
+    --color-gohan: 31, 31, 31;
+    --color-zeno: 0, 0, 0;
+    --color-bulma: 255, 255, 255;
+    --color-trunks: 89, 93, 98;
+    --color-goten: 255, 255, 255; /*forced white*/
+    --color-popo: 0, 0, 0; /*forced black*/
+    --opacity-jiren: 0.32;
+    --opactity-heles: 0.08;
+    --opacity-zeno: 1.0;
+  }
 }
