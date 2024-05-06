@@ -11,6 +11,15 @@
     --main-popo: 0, 0, 0;
     --main-trunks: 89, 93, 98;
     --main-bulma: var(--main-popo);
+    --supportive-krillin: 255, 179, 25;
+    --supportive-chiChi: 255, 78, 100;
+    --supportive-roshi: 46, 125, 50;
+    --supportive-dodoria: 211, 48, 48;
+    --supportive-cell: 149, 241, 213;
+    --supportive-raditz: 179, 128, 74;
+    --supportive-whis: 52, 72, 240;
+    --supportive-frieza: 92, 51, 207;
+    --supportive-nappa: 114, 85, 80;
     --color-piccolo: var(--main-piccolo);
     --color-jiren: var(--main-piccolo);
     --color-hit: 64, 166, 159;
