@@ -24,6 +24,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       </button>
       <Theme>
         <div className="bg-slate-500">
+          {/* test button to make sure it works */}
           <button>Button</button>
           <RadButton color="yellow" className="text-red-500">RadButton</RadButton>
         </div>
