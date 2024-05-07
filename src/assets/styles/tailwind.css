@@ -44,6 +44,17 @@
     --text-bulma: var(--main-trunks);
     --text-goten: var(--main-trunks);
     --text-popo: var(--main-trunks);
+    --shadow-first: 0px 0px 1px 0px;
+    --shadow-first-color: 0, 0, 0, 0.16;
+    --shadow-first-color-xl: 0, 0, 0, 0.2;
+    --shadow-second-color: 0, 0, 0, 0.16;
+    --shadow-second-color-xl: 0, 0, 0, 0.12;
+    --shadow-sm: 0px 6px 6px -6px;
+    --shadow-md: 0px 12px 12px -6px;
+    --shadow-lg: 0px 8px 24px -6px;
+    --shadow-xl: 0px 0px 32px -8px;
+    --shadow-xl-third: 0px 32px 32px -8px;
+    --shadow-xl-third-color: 0, 0, 0, 0.08;
   }
   :root[class~="dark"] {
     --main-piccolo: 78, 70, 180;
@@ -74,5 +85,16 @@
     --text-bulma: var(--main-popo);
     --text-goten: var(--main-popo);
     --text-popo: var(--main-goten);
+    --shadow-first: 0px 0px 1px 0px;
+    --shadow-first-color: 0, 0, 0, 0.56;
+    --shadow-first-color-xl: 0, 0, 0, 0.72;
+    --shadow-second-color: 0, 0, 0, 0.64;
+    --shadow-second-color-xl: 0, 0, 0, 0.88;
+    --shadow-sm: 0px 6px 6px -6px;
+    --shadow-md: 0px 12px 12px -6px;
+    --shadow-lg: 0px 24px 24px -6px;
+    --shadow-xl: 0px 48px 48px -6px;
+    --shadow-xl-third: 0px 0px 0px 0px;
+    --shadow-xl-third-color: 0, 0, 0, 0.0;
   }
 }

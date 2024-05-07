@@ -123,6 +123,27 @@ export default {
         'y-moon-md': '24px',
         'y-moon-lg': '32px',
       },
+      // The shadow is best seen when using the appropriate light/dark mode, on a div with a background color of the same type, and on gohan/goku-colored boxes that are 64x64 rounded-md.
+      // This does not affect dropShadow, because the shadow variables have 'spread' in 'x, y, blur, spread'. To extend to dropShadow, redo the variables to account for only 'x, y, blur'.
+      boxShadow: {
+        'sm': [
+          'var(--shadow-first) rgba(var(--shadow-first-color))',
+          'var(--shadow-sm) rgba(var(--shadow-second-color))',
+        ],
+        'md': [
+          'var(--shadow-first) rgba(var(--shadow-first-color))',
+          'var(--shadow-md) rgba(var(--shadow-second-color))',
+        ],
+        'lg': [
+          'var(--shadow-first) rgba(var(--shadow-first-color))',
+          'var(--shadow-lg) rgba(var(--shadow-second-color))',
+        ],
+        'xl': [
+          'var(--shadow-first) rgba(var(--shadow-first-color))',
+          'var(--shadow-xl) rgba(var(--shadow-second-color-xl))',
+          'var(--shadow-xl-third) rgba(var(--shadow-xl-third-color))',
+        ],
+      },
     },
   },
   variants: {

@@ -11,7 +11,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
     ? "storybook-button--primary"
     : "storybook-button--secondary";
   return (
-    <>
+    <div style={{backgroundColor: '#E2E2E2', width: '500px', display: 'flex', justifyContent: 'space-between'}}>
       <button
         type="button"
         className={["storybook-button", `storybook-button--${size}`, mode].join(
@@ -25,51 +25,39 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       <div style={{ display: "flex" }}>
         <div>
           <div className="bg-main-piccolo text-main-piccolo">
-            {/* test button to make sure it works */}
             <button>Piccolo</button>
           </div>
           <div className="bg-main-jiren text-main-jiren">
-            {/* test button to make sure it works */}
             <button>Jiren</button>
           </div>
           <div className="bg-main-hit text-main-hit">
-            {/* test button to make sure it works */}
             <button>Hit</button>
           </div>
           <div className="bg-main-heles text-main-heles">
-            {/* test button to make sure it works */}
             <button>Heles</button>
           </div>
           <div className="bg-main-beerus text-main-beerus">
-            {/* test button to make sure it works */}
             <button>Beerus</button>
           </div>
           <div className="bg-main-goku text-main-goku">
-            {/* test button to make sure it works */}
             <button>Goku</button>
           </div>
           <div className="bg-main-gohan text-main-gohan">
-            {/* test button to make sure it works */}
             <button>Gohan</button>
           </div>
           <div className="bg-main-zeno text-main-zeno">
-            {/* test button to make sure it works */}
             <button>Zeno</button>
           </div>
-          <div className="bg-main-bulma text-main-bulma">
-            {/* test button to make sure it works */}
+          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-main-bulma shadow-sm">
             <button>Bulma</button>
           </div>
           <div className="bg-main-trunks text-main-trunks">
-            {/* test button to make sure it works */}
             <button>Trunks</button>
           </div>
           <div className="bg-main-goten text-main-goten">
-            {/* test button to make sure it works */}
             <button>Goten</button>
           </div>
           <div className="bg-main-popo text-main-popo">
-            {/* test button to make sure it works */}
             <button>Popo</button>
           </div>
         </div>
@@ -98,7 +86,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-frieza-100 text-supportive-frieza-100">
             <button>Frieza</button>
           </div>
-          <div className="bg-supportive-nappa-100 text-supportive-nappa-100">
+          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-100 shadow-md">
             <button>Nappa</button>
           </div>
         </div>
@@ -127,7 +115,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-frieza-60 text-supportive-frieza-60">
             <button>Frieza-60</button>
           </div>
-          <div className="bg-supportive-nappa-60 text-supportive-nappa-60">
+          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-60 shadow-lg">
             <button>Nappa-60</button>
           </div>
         </div>
@@ -138,25 +126,25 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-chiChi-10 text-supportive-chiChi-10">
             <button>Chi-Chi-10</button>
           </div>
-          <div className="bg-supportive-roshi-10 text-supportive-roshi-60">
+          <div className="bg-supportive-roshi-10 text-supportive-roshi-10">
             <button>Roshi-10</button>
           </div>
-          <div className="bg-supportive-dodoria-10 text-supportive-dodoria-60">
+          <div className="bg-supportive-dodoria-10 text-supportive-dodoria-10">
             <button>Dodoria-10</button>
           </div>
-          <div className="bg-supportive-cell-10 text-supportive-cell-60">
+          <div className="bg-supportive-cell-10 text-supportive-cell-10">
             <button>Cell-10</button>
           </div>
-          <div className="bg-supportive-raditz-10 text-supportive-raditz-60">
+          <div className="bg-supportive-raditz-10 text-supportive-raditz-10">
             <button>Raditz-10</button>
           </div>
-          <div className="bg-supportive-whis-10 text-supportive-whis-60">
+          <div className="bg-supportive-whis-10 text-supportive-whis-10">
             <button>Whis-10</button>
           </div>
-          <div className="bg-supportive-frieza-10 text-supportive-frieza-60">
+          <div className="bg-supportive-frieza-10 text-supportive-frieza-10">
             <button>Frieza-10</button>
           </div>
-          <div className="bg-supportive-nappa-10 text-supportive-nappa-60">
+          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-10 shadow-xl">
             <button>Nappa-10</button>
           </div>
         </div>
@@ -173,7 +161,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           </RadButton>
         </Theme>
       </div>
-    </>
+    </div>
   );
 };
 
