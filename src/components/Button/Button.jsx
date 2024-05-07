@@ -48,7 +48,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-main-zeno text-main-zeno">
             <button>Zeno</button>
           </div>
-          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-main-bulma shadow-sm">
+          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-main-bulma drop-shadow-sm">
             <button>Bulma</button>
           </div>
           <div className="bg-main-trunks text-main-trunks">
@@ -86,7 +86,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-frieza-100 text-supportive-frieza-100">
             <button>Frieza</button>
           </div>
-          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-100 shadow-md">
+          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-100 drop-shadow-md">
             <button>Nappa</button>
           </div>
         </div>
@@ -115,7 +115,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-frieza-60 text-supportive-frieza-60">
             <button>Frieza-60</button>
           </div>
-          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-60 shadow-lg">
+          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-60 drop-shadow-lg">
             <button>Nappa-60</button>
           </div>
         </div>
@@ -144,7 +144,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-frieza-10 text-supportive-frieza-10">
             <button>Frieza-10</button>
           </div>
-          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-10 shadow-xl">
+          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-10 drop-shadow-xl">
             <button>Nappa-10</button>
           </div>
         </div>

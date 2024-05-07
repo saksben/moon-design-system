@@ -124,8 +124,26 @@ export default {
         'y-moon-lg': '32px',
       },
       // The shadow is best seen when using the appropriate light/dark mode, on a div with a background color of the same type, and on gohan/goku-colored boxes that are 64x64 rounded-md.
-      // This does not affect dropShadow, because the shadow variables have 'spread' in 'x, y, blur, spread'. To extend to dropShadow, redo the variables to account for only 'x, y, blur'.
       boxShadow: {
+        'sm': [
+          'var(--shadow-first) var(--shadow-first-blur) rgba(var(--shadow-first-color))',
+          'var(--shadow-sm) var(--shadow-sm-blur) rgba(var(--shadow-second-color))',
+        ],
+        'md': [
+          'var(--shadow-first) var(--shadow-first-blur) rgba(var(--shadow-first-color))',
+          'var(--shadow-md) var(--shadow-md-blur) rgba(var(--shadow-second-color))',
+        ],
+        'lg': [
+          'var(--shadow-first) var(--shadow-first-blur) rgba(var(--shadow-first-color))',
+          'var(--shadow-lg) var(--shadow-lg-blur) rgba(var(--shadow-second-color))',
+        ],
+        'xl': [
+          'var(--shadow-first) var(--shadow-first-blur) rgba(var(--shadow-first-color))',
+          'var(--shadow-xl) var(--shadow-xl-blur) rgba(var(--shadow-second-color-xl))',
+          'var(--shadow-xl-third) var(--shadow-xl-third-blur) rgba(var(--shadow-xl-third-color))',
+        ],
+      },
+      dropShadow: {
         'sm': [
           'var(--shadow-first) rgba(var(--shadow-first-color))',
           'var(--shadow-sm) rgba(var(--shadow-second-color))',
