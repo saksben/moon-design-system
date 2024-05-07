@@ -11,7 +11,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
     ? "storybook-button--primary"
     : "storybook-button--secondary";
   return (
-    <div style={{backgroundColor: '#E2E2E2', width: '500px', display: 'flex', justifyContent: 'space-between'}}>
+    <div>
       <button
         type="button"
         className={["storybook-button", `storybook-button--${size}`, mode].join(
@@ -24,45 +24,45 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       </button>
       <div style={{ display: "flex" }}>
         <div>
-          <div className="bg-main-piccolo text-main-piccolo">
+          <div className="bg-main-piccolo text-main-piccolo text-3xs">
             <button>Piccolo</button>
           </div>
-          <div className="bg-main-jiren text-main-jiren">
+          <div className="bg-main-jiren text-main-jiren text-2xs">
             <button>Jiren</button>
           </div>
-          <div className="bg-main-hit text-main-hit">
+          <div className="bg-main-hit text-main-hit text-xs">
             <button>Hit</button>
           </div>
-          <div className="bg-main-heles text-main-heles">
+          <div className="bg-main-heles text-main-heles text-sm">
             <button>Heles</button>
           </div>
-          <div className="bg-main-beerus text-main-beerus">
+          <div className="bg-main-beerus text-main-beerus text-md">
             <button>Beerus</button>
           </div>
-          <div className="bg-main-goku text-main-goku">
+          <div className="bg-main-goku text-main-goku text-lg">
             <button>Goku</button>
           </div>
-          <div className="bg-main-gohan text-main-gohan">
+          <div className="bg-main-gohan text-main-gohan text-xl">
             <button>Gohan</button>
           </div>
-          <div className="bg-main-zeno text-main-zeno">
+          <div className="bg-main-zeno text-main-zeno text-2xl">
             <button>Zeno</button>
           </div>
-          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-main-bulma drop-shadow-sm">
+          <div className="bg-main-bulma text-main-bulma text-3xl">
             <button>Bulma</button>
           </div>
-          <div className="bg-main-trunks text-main-trunks">
-            <button>Trunks</button>
+          <div className="bg-main-trunks text-main-trunks text-4xl">
+            <button className="underline font-semibold">Trunks</button>
           </div>
-          <div className="bg-main-goten text-main-goten">
+          <div className="bg-main-goten text-main-goten text-6xl">
             <button>Goten</button>
           </div>
-          <div className="bg-main-popo text-main-popo">
+          <div className="bg-main-popo text-main-popo text-6xl">
             <button>Popo</button>
           </div>
         </div>
         <div>
-          <div className="bg-supportive-krillin-100 text-supportive-krillin-100">
+          <div className="bg-supportive-krillin-100 text-supportive-krillin-100 text-3xs font-semibold">
             <button>Krillin</button>
           </div>
           <div className="bg-supportive-chiChi-100 text-supportive-chiChi-100">
@@ -86,7 +86,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-frieza-100 text-supportive-frieza-100">
             <button>Frieza</button>
           </div>
-          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-100 drop-shadow-md">
+          <div className="bg-supportive-nappa-100 text-supportive-nappa-100">
             <button>Nappa</button>
           </div>
         </div>
@@ -115,7 +115,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-frieza-60 text-supportive-frieza-60">
             <button>Frieza-60</button>
           </div>
-          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-60 drop-shadow-lg">
+          <div className="bg-supportive-nappa-60 text-supportive-nappa-60">
             <button>Nappa-60</button>
           </div>
         </div>
@@ -144,7 +144,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
           <div className="bg-supportive-frieza-10 text-supportive-frieza-10">
             <button>Frieza-10</button>
           </div>
-          <div className="my-[50px] w-[64px] h-[64px] rounded-md ml-[15px] bg-main-gohan text-supportive-nappa-10 drop-shadow-xl">
+          <div className="bg-supportive-nappa-10 text-supportive-nappa-10">
             <button>Nappa-10</button>
           </div>
         </div>

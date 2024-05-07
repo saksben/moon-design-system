@@ -25,13 +25,16 @@ const preview = {
     },
   },
 
-  decorators: [withThemeByClassName({
+  decorators: [
+    withThemeByClassName({
       themes: {
           // nameOfTheme: 'classNameForTheme',
           light: 'light',
           dark: 'dark',
       },
-  })]
+      defaultTheme: 'light', // This must remain or it will have a 'split' error
+  })
+]
 };
 
 export default preview;
