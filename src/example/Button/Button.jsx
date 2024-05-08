@@ -14,6 +14,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   return (
     <div>
       <ArrowsBoost />
+      {/* to add an icon, you would need to wrap everything in a div, collect its state from the descendant using 'has', use flex, and put the icon and other component in that div */}
       <button
         type="button"
         className={["storybook-button", `storybook-button--${size}`, mode].join(

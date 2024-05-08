@@ -1,20 +1,18 @@
 import PropTypes from "prop-types";
 
-export const TextArea = ({
-  className,
-  readOnly,
-  error,
-  ...props
-}) => {
-  const modeTA =
+export const TextArea = ({ error, className, readOnly, ...props }) => {
+  const modeTextarea =
     readOnly &&
     "cursor-not-allowed border-1 hover:border-transparent active:border-transparent focus:border-transparent";
   const modeDiv =
-    readOnly && "cursor-not-allowed has-[:focus]:border-main-beerus has-[:active]:border-main-beerus";
-  const validTA = error
+    readOnly &&
+    "cursor-not-allowed has-[:focus]:border-main-beerus has-[:active]:border-main-beerus";
+  const validTextarea = error
     ? "border-supportive-chiChi-100 border-2 hover:border-supportive-chiChi-100 focus:border-supportive-chiChi-100 active:border-supportive-chiChi-100"
     : "border-transparent";
-const validDiv = error ? "border-supportive-chiChi-100" : "border-main-beerus";
+  const validDiv = error
+    ? "border-supportive-chiChi-100"
+    : "border-main-beerus";
 
   return (
     <div
@@ -36,8 +34,8 @@ const validDiv = error ? "border-supportive-chiChi-100" : "border-main-beerus";
             active:border-main-piccolo active:border-1
             disabled:hover:border-transparent disabled:focus:border-transparent disabled:cursor-not-allowed
             invalid:border-supportive-chiChi-100 invalid:border-2`,
-          modeTA,
-          validTA,
+          modeTextarea,
+          validTextarea,
           className,
         ].join(" ")}
         {...props}
@@ -47,13 +45,11 @@ const validDiv = error ? "border-supportive-chiChi-100" : "border-main-beerus";
 };
 
 TextArea.propTypes = {
-  readOnly: PropTypes.bool,
   error: PropTypes.bool,
+  readOnly: PropTypes.bool,
   className: PropTypes.string,
 };
 
 TextArea.defaultProps = {
-  placeholder: "Textarea...",
-  readOnly: false,
   error: false,
 };
