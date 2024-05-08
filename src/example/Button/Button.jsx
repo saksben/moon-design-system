@@ -26,40 +26,40 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       </button>
       <div style={{ display: "flex" }}>
         <div>
-          <div className="bg-main-piccolo hover:bg-hover-main-piccolo text-main-piccolo">
+          <div className="bg-main-piccolo hover:bg-hover-main-piccolo text-main-goten">
             <button>Piccolo</button>
           </div>
-          <div className="bg-main-jiren hover:bg-hover-main-jiren text-main-jiren">
+          <div className="bg-main-jiren hover:bg-hover-main-jiren text-main-piccolo">
             <button>Jiren</button>
           </div>
-          <div className="bg-main-hit hover:bg-hover-main-hit text-main-hit">
+          <div className="bg-main-hit hover:bg-hover-main-hit text-main-goku">
             <button>Hit</button>
           </div>
-          <div className="bg-main-heles hover:bg-hover-main-heles text-main-heles">
+          <div className="bg-main-heles hover:bg-hover-main-heles text-main-bulma">
             <button>Heles</button>
           </div>
-          <div className="bg-main-beerus hover:bg-hover-main-beerus text-main-beerus">
+          <div className="bg-main-beerus hover:bg-hover-main-beerus text-main-trunks">
             <button>Beerus</button>
           </div>
-          <div className="bg-main-goku hover:bg-hover-main-goku text-main-goku">
+          <div className="bg-main-goku hover:bg-hover-main-goku text-main-trunks">
             <button>Goku</button>
           </div>
-          <div className="bg-main-gohan hover:bg-hover-main-gohan text-main-gohan">
+          <div className="bg-main-gohan hover:bg-hover-main-gohan text-main-trunks">
             <button>Gohan</button>
           </div>
-          <div className="bg-main-zeno hover:bg-hover-main-zeno text-main-zeno">
+          <div className="bg-main-zeno hover:bg-hover-main-zeno text-main-trunks">
             <button>Zeno</button>
           </div>
-          <div className="bg-main-bulma hover:bg-hover-main-bulma text-main-bulma">
+          <div className="bg-main-bulma hover:bg-hover-main-bulma text-main-trunks">
             <button>Bulma</button>
           </div>
-          <div className="bg-main-trunks hover:bg-hover-main-trunks text-main-trunks">
+          <div className="bg-main-trunks hover:bg-hover-main-trunks text-main-goku">
             <button>Trunks</button>
           </div>
-          <div className="bg-main-goten hover:bg-hover-main-goten text-main-goten">
+          <div className="bg-main-goten hover:bg-hover-main-goten text-main-trunks">
             <button>Goten</button>
           </div>
-          <div className="bg-main-popo hover:bg-hover-main-popo text-main-popo">
+          <div className="bg-main-popo hover:bg-hover-main-popo text-main-trunks">
             <button>Popo</button>
           </div>
         </div>
