@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./button.css";
 import { Button as RadButton, Theme } from "@radix-ui/themes";
+import ArrowsBoost from '../../assets/icons/components/ArrowsBoost'
 
 /**
  * Primary UI component for user interaction
@@ -12,6 +13,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
     : "storybook-button--secondary";
   return (
     <div>
+      <ArrowsBoost />
       <button
         type="button"
         className={["storybook-button", `storybook-button--${size}`, mode].join(
