@@ -142,7 +142,7 @@ export default {
           "nappa-10": "rgb(var(--main-bulma))",
         },
       },
-      // SVG icon customization: fill-{color} (or) stroke-{color} stroke-2.
+      // SVG icon customization: fill-{color} (or) stroke-{color} stroke-2. Size has 4 SVG sizes.
       spacing: {
         1: "4px",
         2: "8px",
