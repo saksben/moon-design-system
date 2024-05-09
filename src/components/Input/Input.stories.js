@@ -18,10 +18,10 @@ export const Placeholder = {
   },
 };
 
-export const Disabled = {
+export const Error = {
   args: {
-    disabled: true,
-    placeholder: "Disabled",
+    error: true,
+    placeholder: "Error",
   },
 };
 
@@ -32,9 +32,10 @@ export const readOnly = {
     placeholder: "Read only text",
   },
 };
-export const Error = {
+
+export const Disabled = {
   args: {
-    error: true,
-    placeholder: "Error",
+    disabled: true,
+    placeholder: "Disabled",
   },
 };

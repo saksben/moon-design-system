@@ -1,15 +1,19 @@
 import React from "react";
+import { cn } from "../../utils/cn";
 import * as RadCheckbox from "@radix-ui/react-checkbox";
 import { DividerHorizontalIcon, CheckIcon } from "@radix-ui/react-icons";
 
-export const Checkbox = () => {
+export const Checkbox = ({className, ...props}) => {
+  const styleCheckbox = 'bg-main-piccolo';
+  
   const [checked, setChecked] = React.useState("indeterminate");
   return (
     <>
       <RadCheckbox.Root
         checked={checked}
         onCheckedChange={setChecked}
-        className="bg-main-piccolo"
+        className={cn(styleCheckbox, className)}
+        {...props}
       >
         <RadCheckbox.Indicator>
           {checked === "indeterminate" && <DividerHorizontalIcon />}
