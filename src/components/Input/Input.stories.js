@@ -13,6 +13,9 @@ export const Default = {
 
 export const Placeholder = {
   name: "Default with Placeholder",
+  args: {
+    placeholder: "Default with placeholder",
+  },
 };
 
 export const Disabled = {

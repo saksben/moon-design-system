@@ -60,7 +60,7 @@ export const Input = ({ error, size, className, readOnly, type, ...props }) => {
   return (
     <div
       className={[
-        `transition ease-in-out duration-200 
+        `transition ease-in-out duration-200
     border border-1 rounded-md has-[:disabled]:opacity-[32%]`,
         modeDiv,
         validDiv,
@@ -70,8 +70,8 @@ export const Input = ({ error, size, className, readOnly, type, ...props }) => {
         readOnly={readOnly}
         className={[
           `transition ease-in-out duration-200
-             w-full block text-md bg-main-gohan placeholder-main-trunks text-main-bulma
-            outline-none resize-none rounded-md  border-2
+            w-full block text-md bg-main-gohan placeholder-main-trunks text-main-bulma
+            outline-none resize-none rounded-md border-2
             hover:border-hover-main-beerus hover:border-2
             focus:border-main-piccolo focus:border-1 
             active:border-main-piccolo active:border-1
@@ -103,4 +103,5 @@ Input.defaultProps = {
   size: "md",
   error: false,
   type: "text",
+  placeholder: "",
 };
