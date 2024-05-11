@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./button.css";
 import { Button as RadButton, Theme } from "@radix-ui/themes";
-import ArrowsBoost from '../../assets/icons/components/ArrowsBoost'
+import ArrowsBoostIcon from "../../assets/icons/components/ArrowsBoostIcon";
 import { Input } from "../../components/Input/Input";
+import { Checkbox } from "../../components/Checkbox/Checkbox";
 
 /**
- * Primary UI component for user interaction
+ * Playground to test components when handed props
  */
 export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   const mode = primary
@@ -14,8 +15,9 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
     : "storybook-button--secondary";
   return (
     <div>
+      <Checkbox indeterminate checked={true} className=' size-10 bg-main-hit text-main-piccolo rounded-none border-supportive-chiChi-100 border-2' />
       <Input className='bg-main-hit' type='search' />
-      <ArrowsBoost />
+      <ArrowsBoostIcon />
       {/* to add an icon, you would need to wrap everything in a div, collect its state from the descendant using 'has', use flex, and put the icon and other component in that div */}
       <button
         type="button"

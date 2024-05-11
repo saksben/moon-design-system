@@ -158,7 +158,7 @@ export default {
         12: "48px",
       },
       size: {
-        "svg-1": "32px",
+        "svg-1": "32px", //
         "svg-2": "24px",
         "svg-3": "16px",
         "svg-4": "8px",

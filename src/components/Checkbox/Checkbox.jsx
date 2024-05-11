@@ -1,46 +1,91 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { cn } from "../../utils/cn";
 import * as RadCheckbox from "@radix-ui/react-checkbox";
-import { DividerHorizontalIcon, CheckIcon } from "@radix-ui/react-icons";
+import ControlsMinusIcon from "../../assets/icons/components/ControlsMinusIcon";
+import GenericCheckAlternativeIcon from "../../assets/icons/components/GenericCheckAlternativeIcon";
 
-export const Checkbox = ({className, ...props}) => {
-  const styleCheckbox = 'bg-main-piccolo';
-  
-  const [checked, setChecked] = React.useState("indeterminate");
+// TODO: state logic works, but for some reason doesn't update when manipulated in exercise code
+
+export const Checkbox = ({
+  bgColor,
+  checked,
+  indeterminate,
+  readOnly,
+  disabled,
+  onChange,
+  id,
+  className,
+  ...props
+}) => {
+  const defaultChecked = checked ? checked : false;
+  const [check, setIsChecked] = React.useState(defaultChecked);
+
+  // Checkbox base styles
+  const styleCheckbox = cn(
+    "inline-block flex items-center justify-center size-svg-2 rounded-md text-main-goten transition ease-in-out duration-200",
+    check === false ? 'bg-transparent border-[1.5px] border-main-trunks' : `bg-${bgColor}`,
+    // Variant styles
+    readOnly && "pointer-events-none",
+    disabled && "disabled:opacity-[32%] disabled:cursor-not-allowed"
+  );
+  // Indicator styles
+  const styleIndicator = cn("flex items-center justify-center cursor-pointer");
+  // Icon styles
+  const styleIcon = cn("size-svg-2 rounded-md ");
+
+  const handleChange = (e) => {
+    const newChecked = e.target.checked;
+    setIsChecked(newChecked);
+    if (onChange) {
+      onChange(e)
+    }
+  }
+
+  React.useEffect(() => {
+    console.log(check);
+  }, [check]);
+
   return (
     <>
-      <RadCheckbox.Root
-        checked={checked}
-        onCheckedChange={setChecked}
-        className={cn(styleCheckbox, className)}
-        {...props}
-      >
-        <RadCheckbox.Indicator>
-          {checked === "indeterminate" && <DividerHorizontalIcon />}
-          {checked === true && <CheckIcon />}
-        </RadCheckbox.Indicator>
-      </RadCheckbox.Root>
-
-      <button
-        type="button"
-        onClick={() =>
-          setChecked((prevIsChecked) =>
-            prevIsChecked === "indeterminate" ? false : "indeterminate"
-          )
-        }
-      >
-        Toggle indeterminate
-      </button>
+      <div className={cn(styleCheckbox)}>
+        <label className="relative">
+          <input
+            type="checkbox"
+            checked={check}
+            id={id}
+            className="appearance-none absolute"
+            onChange={
+              handleChange
+            }
+            {...props}
+          />
+          <div className={cn(styleIndicator)}>
+            {check && (
+              <GenericCheckAlternativeIcon
+                className={cn(styleIcon, className)}
+              />
+            )}
+            {check === false && <div className={cn(styleIcon, className)}></div>}
+          </div>
+        </label>
+      </div>
     </>
   );
 };
 
-// PROPS:
-// label = <label className=${labelStyles} htmlFor={id}>{label}</label>
-// id = id={id}
-// checked=checked
-// onClick=onCheckedChange? ={setChecked} if using state, maybe doesn't need state?
-// disabled=disabled
-// readOnly = readOnly styling
-// indeterminate = use state and setChecked to 'indeterminate'
-// bgColor = add to className or style
+Checkbox.propTypes = {
+  bgColor: PropTypes.string,
+  checked: PropTypes.oneOf([true, false, "indeterminate"]),
+  indeterminate: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+  id: PropTypes.string,
+  className: PropTypes.string,
+}
+
+Checkbox.defaultProps = {
+  bgColor: "main-piccolo",
+  checked: false,
+};

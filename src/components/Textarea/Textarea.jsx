@@ -29,6 +29,9 @@ export const TextArea = ({ error, readOnly, className, ...props }) => {
       "cursor-not-allowed hover:border-transparent active:border-transparent focus:border-transparent"
   );
 
+  // Note: there isn't a way I know of to make this 1px default then 2px onHover or onFocus like the
+  // Figma file because of the input/textarea's border padding. So it's either this way (in which it
+  // looks just a little shiny at the corners), or make it 2px always (which I might end up doing)
   return (
     <>
       <div className={cn(styleDiv)}>
