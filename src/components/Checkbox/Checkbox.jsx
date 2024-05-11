@@ -38,7 +38,7 @@ export const Checkbox = ({
   const styleCheckbox = cn(
     "inline-block flex items-center justify-center size-svg-2 rounded-md text-main-goten transition ease-in-out duration-200",
     // Variant styles
-    check === false
+    !check[0]
       ? "bg-transparent border-[1.5px] border-main-trunks"
       : `bg-${bgColor}`,
     disabled && "opacity-[32%]"
