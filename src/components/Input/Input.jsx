@@ -11,7 +11,7 @@ export const Input = ({ size, error, readOnly, type, className, ...props }) => {
     // Variant styles
     readOnly &&
       "cursor-not-allowed has-[:focus]:border-main-beerus has-[:active]:border-main-beerus",
-    error ? "border-supportive-chiChi-100" : "border-main-beerus"
+    error ? "border-supportive-chiChi" : "border-main-beerus"
   );
 
   // Conditional styling for input
@@ -25,7 +25,7 @@ export const Input = ({ size, error, readOnly, type, className, ...props }) => {
       "focus:border-main-piccolo focus:border-2",
       "active:border-main-piccolo active:border-2",
       "disabled:hover:border-transparent disabled:focus:border-transparent disabled:cursor-not-allowed",
-      "invalid:border-supportive-chiChi-100 invalid:border-2",
+      "invalid:border-supportive-chiChi invalid:border-2",
     ],
     // Variant styles
     {
@@ -40,7 +40,7 @@ export const Input = ({ size, error, readOnly, type, className, ...props }) => {
           true: "cursor-not-allowed hover:border-transparent active:border-transparent focus:border-transparent",
         },
         error: {
-          true: "border-supportive-chiChi-100 border-2 hover:border-supportive-chiChi-100 focus:border-supportive-chiChi-100 active:border-supportive-chiChi-100",
+          true: "border-supportive-chiChi border-2 hover:border-supportive-chiChi focus:border-supportive-chiChi active:border-supportive-chiChi",
           false: "border-transparent",
         },
       },

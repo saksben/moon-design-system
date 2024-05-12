@@ -7,7 +7,7 @@ export const TextArea = ({ error, readOnly, className, ...props }) => {
     // Base styles
     "transition ease-in-out duration-200 border rounded-md has-[:disabled]:opacity-[32%]",
     // Variant styles
-    error == true ? "border-supportive-chiChi-100" : "border-main-beerus",
+    error == true ? "border-supportive-chiChi" : "border-main-beerus",
     readOnly && "cursor-not-allowed"
   );
 
@@ -20,10 +20,10 @@ export const TextArea = ({ error, readOnly, className, ...props }) => {
     "focus:border-main-piccolo focus:border-2",
     "active:border-main-piccolo active:border-2",
     "disabled:hover:border-transparent disabled:focus:border-transparent disabled:cursor-not-allowed",
-    "invalid:border-supportive-chiChi-100 invalid:border-2",
+    "invalid:border-supportive-chiChi invalid:border-2",
     // Variant styles
     error == true
-      ? "border-supportive-chiChi-100 hover:border-supportive-chiChi-100 focus:border-supportive-chiChi-100 active:border-supportive-chiChi-100"
+      ? "border-supportive-chiChi hover:border-supportive-chiChi focus:border-supportive-chiChi active:border-supportive-chiChi"
       : "border-transparent",
     readOnly &&
       "cursor-not-allowed hover:border-transparent active:border-transparent focus:border-transparent"

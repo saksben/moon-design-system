@@ -1,6 +1,7 @@
 import { cn } from "../../utils/cn";
 import { cva } from "class-variance-authority";
 import "ldrs/ring";
+import { Loader } from "../Loader/Loader";
 
 // PropTypes defined in ./Button
 export const ButtonBase = ({
@@ -62,7 +63,7 @@ export const ButtonBase = ({
           progress: "px-10",
           success: "",
           error:
-            "bg-supportive-chiChi-100 text-main-goten hover:bg-supportive-chiChi-100",
+            "bg-supportive-chiChi text-main-goten hover:bg-supportive-chiChi",
           pulse: "animate-bounce-x",
         },
       },
