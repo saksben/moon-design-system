@@ -36,7 +36,7 @@ export const Checkbox = ({
 
   // Checkbox base styles
   const styleCheckbox = cn(
-    "inline-block flex items-center justify-center size-svg-2 rounded-md text-main-goten transition ease-in-out duration-200",
+    "inline-block flex items-center justify-center size-svg-3 rounded-md text-main-goku transition ease-in-out duration-200",
     // Variant styles
     !check[0]
       ? "bg-transparent border-[1.5px] border-main-trunks"
@@ -49,7 +49,7 @@ export const Checkbox = ({
     readOnly || disabled ? "cursor-not-allowed" : "cursor-pointer"
   );
   // Icon styles
-  const styleIcon = cn("size-svg-2 rounded-md");
+  const styleIcon = cn("size-svg-3 rounded-md");
 
   // Flip the checkbox on or off when clicked
   const handleChange = (e) => {
@@ -65,7 +65,6 @@ export const Checkbox = ({
         <label className={cn("relative")}>
           <input
             type="checkbox"
-            checked={check}
             disabled={disabled || readOnly}
             id={id}
             ref={ref}

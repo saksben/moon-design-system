@@ -144,24 +144,24 @@ export default {
       },
       // SVG icon customization: fill-{color} (or) stroke-{color} stroke-2. Size has 4 SVG sizes.
       spacing: {
-        1: "4px",
-        2: "8px",
-        3: "12px",
-        4: "16px",
-        5: "20px",
-        6: "24px",
-        7: "28px",
-        8: "32px",
-        9: "36px",
-        10: "40px",
-        11: "44px",
-        12: "48px",
+        1: "0.25rem", // 4px
+        2: "0.5rem", // 8px
+        3: "0.75rem", // 12px
+        4: "1rem", // 16px
+        5: "1.25rem", // 20px
+        6: "1.5rem", // 24px
+        7: "1.75rem", // 28px
+        8: "2rem", // 32px
+        9: "2.25rem", // 36px
+        10: "2.5rem", // 40px
+        11: "2.75rem", // 44px
+        12: "3rem", // 48px
       },
       size: {
-        "svg-1": "32px",
-        "svg-2": "24px",
-        "svg-3": "16px",
-        "svg-4": "8px",
+        "svg-1": "0.5rem", // 8px
+        "svg-2": "1rem", // 16px
+        "svg-3": "1.5rem", // 24px
+        "svg-4": "2rem", // 32px
       },
       maxWidth: {
         container: "1328px",
@@ -220,25 +220,50 @@ export default {
         sans: ["DM Sans", "Roboto"],
       },
       fontSize: {
-        "3xs": "0.5625rem",
-        "2xs": "0.625rem",
-        xs: "0.75rem",
-        sm: "0.875rem",
-        md: "1rem",
-        lg: "1.125rem",
-        xl: "1.25rem",
-        "2xl": "1.5rem",
-        "3xl": "2rem",
-        "4xl": "2.5rem",
-        "5xl": "3rem",
-        "6xl": "3.5rem",
-        "7xl": "4rem",
-        "8xl": "4.5rem",
+        "3xs": "0.5625rem", // 9px
+        "2xs": "0.625rem", // 10px
+        xs: "0.75rem", // 12px
+        sm: "0.875rem", // 14px
+        md: "1rem", // 16px
+        lg: "1.125rem", // 18px
+        xl: "1.25rem", // 20px
+        "2xl": "1.5rem", // 24px
+        "3xl": "2rem", // 28px
+        "4xl": "2.5rem", // 32px
+        "5xl": "3rem", // 36px
+        "6xl": "3.5rem", // 40px
+        "7xl": "4rem", // 44px
+        "8xl": "4.5rem", // 48px
       },
       fontWeight: {
         regular: "400",
         semibold: "600",
         bold: "700",
+      },
+      keyframes: {
+        // Horizontal bounce
+        "bounce-x": {
+          "0%, 100%": {
+            transform: "translateX(2%)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "25%": {
+            transform: "translateX(0)",
+            animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
+          },
+          "50%": {
+            transform: "translateX(2%)",
+            animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
+          },
+          "75%": {
+            transform: "translateX(0)",
+            animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
+          },
+        },
+      },
+      animation: {
+        "bounce-x": "bounce-x 1s infinite", // Horizontal bounce
+        'ping-slow': "ping 2s cubic-bezier(0, 0, 0.2, 1) infinite" // Pulse effect for ping
       },
     },
   },
