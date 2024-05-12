@@ -60,7 +60,7 @@ export const ButtonBase = ({
         // I have no idea what the "true" or "false" animations do
         // I also don't see any difference that "success" has from a regular Button with an icon as {children}
         animation: {
-          progress: "px-10",
+          progress: "px-8",
           success: "",
           error:
             "bg-supportive-chiChi text-main-goten hover:bg-supportive-chiChi",
@@ -122,7 +122,7 @@ export const ButtonBase = ({
             )}
             {/* progress animation loader icon */}
             {animation === "progress" && (
-              <l-ring size="30" color="white"></l-ring>
+              <Loader size='xs' color='main-goten' />
             )}
             {/* Children from user */}
             {children}
