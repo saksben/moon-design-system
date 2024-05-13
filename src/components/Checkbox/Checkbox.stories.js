@@ -28,7 +28,6 @@ export const Disabled = {
 };
 
 export const ReadOnly = {
-  name: "Read Only",
   args: {
     readOnly: true,
     ...Checked.args,

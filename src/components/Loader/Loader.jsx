@@ -28,7 +28,7 @@ export const Loader = ({ color, size, ...props }) => {
   }
 };
 
-Loader.PropTypes = {
+Loader.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOf(["2xl", "xs", "sm", "md", "lg"]),
 };

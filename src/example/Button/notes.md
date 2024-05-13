@@ -1,3 +1,7 @@
+What I've learned.
+
+I'm 6 components in, and I've come to the conclusion that I'd just be better off creating my own components from scratch if I'm following a specific design system. I started by using Material UI, and after a few weeks I finally figured out how to make it work, but it was much too heavy so I looked for an alternative. Then I found Radix-ui as headless components I could style, and it was 99% perfect -- the problem is that remaining 1% was one little thing that the design system called for but the Radix component made impossible by its own architecture (of course, it was possible, but would involve a very high level of compensating code). So after 2 abandoned Radix components, I decided that using Google to learn how to make a basic component and styling/creating the rest from scratch was the easiest way to go. I'm 6 for 6 now.
+
 There are 4 ways to approach styling.
 
 1. The old-fashioned way. 3 files per component: jsx, story, css. You get what you want and have division of file labor, but you need to come up with every single class name and state.

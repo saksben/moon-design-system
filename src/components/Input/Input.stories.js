@@ -25,8 +25,7 @@ export const Error = {
   },
 };
 
-export const readOnly = {
-  name: "Read Only",
+export const ReadOnly = {
   args: {
     readOnly: true,
     placeholder: "Read only text",

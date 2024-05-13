@@ -1,16 +1,14 @@
-// import { fn } from '@storybook/test';
+import { fn } from '@storybook/test';
 import OtherFrameIcon from "../../assets/icons/components/OtherFrameIcon";
 import { Button } from "./Button";
 
 export default {
   title: "Core/Button",
   component: Button,
-  // parameters: {layout: 'centered'},
   argTypes: {
-    // backgroundColor: { control: 'color' },
+    backgroundColor: { control: 'color' },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  // args: { onClick: fn() },
+  args: { onClick: fn() },
 };
 
 export const Default = {
@@ -41,7 +39,6 @@ export const Disabled = {
 };
 
 export const FullWidth = {
-  name: "Full Width",
   args: {
     children: "Full Width",
     fullWidth: true,
@@ -49,7 +46,6 @@ export const FullWidth = {
 };
 
 export const IconLeft = {
-  name: "Icon Left",
   args: {
     children: "IconLeft",
     iconLeft: <OtherFrameIcon />,
@@ -57,7 +53,6 @@ export const IconLeft = {
 };
 
 export const IconRight = {
-  name: "Icon Right",
   args: {
     children: "IconRight",
     iconRight: <OtherFrameIcon />,
@@ -72,6 +67,17 @@ export const Link = {
     target: "_blank",
   },
 };
+
+export const MultiLine = () => (
+  <Button size="xl" className="py-3">
+    <span className="flex flex-col gap-1">
+      <span className="leading-none">Button text</span>
+      <span className="text-[9px] font-normal leading-[12px]">
+        Placeholder text
+      </span>
+    </span>
+  </Button>
+)
 
 export const Progress = {
   name: "Animation: Progress",
