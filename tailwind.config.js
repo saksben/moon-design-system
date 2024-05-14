@@ -274,5 +274,3 @@ export default {
   },
   plugins: [],
 };
-
-export const getThemeColor = (color) => theme.extend.colors[color]
