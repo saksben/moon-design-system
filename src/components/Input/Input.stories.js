@@ -28,7 +28,8 @@ export const Error = {
 export const ReadOnly = {
   args: {
     readOnly: true,
-    placeholder: "Read only text",
+    placeholder: "Placeholder",
+    value: 'Read only text'
   },
 };
 

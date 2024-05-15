@@ -156,6 +156,8 @@ export default {
         10: "2.5rem", // 40px
         11: "2.75rem", // 44px
         12: "3rem", // 48px
+        13: "3.25rem", // 52px
+        14: "3.5rem", // 56px
       },
       size: {
         "svg-1": "0.5rem", // 8px
