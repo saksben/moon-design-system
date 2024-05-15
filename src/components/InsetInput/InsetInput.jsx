@@ -73,7 +73,7 @@ InsetInput.Label = ({ className, children, ...props }) => {
   const { isFocused, type } = React.useContext(InputContext);
 
   const stylesFloatLabel = cn(
-    "absolute text-md text-main-trunks top-5 left-5 pointer-events-none",
+    "absolute text-md text-trunks top-[1.125rem] left-5 pointer-events-none",
     "transition-all duration-200",
     isFocused && "top-3 left-5 text-xs"
   );
@@ -105,22 +105,6 @@ InsetInput.Label.displayName = "InsetInput.Label";
 InsetInput.Label.propTypes = {
   className: PropTypes.string,
 };
-
-// Floating label (Label)
-// -Text appears via {value} prop or placeholder
-// -InsetInput is a wrapper (styleDiv), holding a child Input (styleInput) and a user-provided InsetInput.Label
-// -Animation: input part is && on focus and a div? and goes from transparent text to regular. Also, push down with the 'label' class
-// -Animation: label goes from md text to small
-
-// STATES
-// -hover
-// -focus
-// -active
-// -disabled: auto label and placeholder. Placeholder='Placeholder'
-// -error: placeholder='Placeholder'
-// -read only: auto label and value text
-
-// -type: type is the floating label text
 
 // CUSTOMIZATION
 // InsetInput puts a class on Input for text color

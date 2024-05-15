@@ -29,14 +29,14 @@ export const ButtonBase = ({
       variants: {
         variant: {
           fill: [
-            "bg-main-piccolo text-main-goten",
-            !disabled && "hover:bg-hover-main-piccolo",
+            "bg-piccolo text-goten",
+            !disabled && "hover:bg-hover-piccolo",
           ],
           outline: [
-            "border border-main-trunks text-main-bulma",
-            !disabled && "hover:bg-hover-main-heles",
+            "border border-trunks text-bulma",
+            !disabled && "hover:bg-hover-heles",
           ],
-          ghost: ["text-main-trunks", !disabled && "hover:bg-main-jiren"],
+          ghost: ["text-trunks", !disabled && "hover:bg-jiren"],
         },
         size: {
           xs: ["px-2 py-1 text-xs", iconLeft && "pl-0", iconRight && "pr-0"],
@@ -63,7 +63,7 @@ export const ButtonBase = ({
           progress: "px-8",
           success: "",
           error:
-            "bg-supportive-chiChi text-main-goten hover:bg-supportive-chiChi",
+            "bg-chiChi text-goten hover:bg-chiChi",
           pulse: "animate-bounce-x",
         },
       },
@@ -122,7 +122,7 @@ export const ButtonBase = ({
             )}
             {/* progress animation loader icon */}
             {animation === "progress" && (
-              <Loader size='xs' color='main-goten' />
+              <Loader size='xs' color='goten' />
             )}
             {/* Children from user */}
             {children}

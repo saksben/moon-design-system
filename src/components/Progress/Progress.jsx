@@ -7,7 +7,7 @@ import { cva } from "class-variance-authority";
 // The Default progress bar works perfectly
 
 export const Progress = ({ className, pin, size, value, ...props }) => {
-  // Background is main-beerus because Figma's opacity affects indicator bar since Root wraps Indicator
+  // Background is beerus because Figma's opacity affects indicator bar since Root wraps Indicator
   // overflow-hidden to fix clipping in Safari
   // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
   const stylesRoot = cva("rounded-full overflow-hidden w-full", {
@@ -23,13 +23,13 @@ export const Progress = ({ className, pin, size, value, ...props }) => {
   });
 
   const stylesBar = cn(
-    "progress-bar-container absolute bg-main-trunks opacity-[0.25] h-full w-full rounded-full"
+    "progress-bar-container absolute bg-trunks opacity-[0.25] h-full w-full rounded-full"
   );
 
   // Automatically has smooth progress. Can be changed by giving className='transition-none'
   const stylesIndicator = cn([
     "progress",
-    "h-full bg-main-piccolo rounded-full",
+    "h-full bg-piccolo rounded-full",
     "transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]",
   ]);
 
@@ -39,12 +39,12 @@ export const Progress = ({ className, pin, size, value, ...props }) => {
   ]);
 
   const stylesPin = cn(
-    ["size-4 bg-main-goten rounded-full drop-shadow-sm"],
+    ["size-4 bg-goten rounded-full drop-shadow-sm"],
     " transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
   );
 
   const stylesLabel = cn(
-    "absolute size-8 rounded bg-main-bulma rounded-full flex justify-center items-center drop-shadow-sm",
+    "absolute size-8 rounded bg-bulma rounded-full flex justify-center items-center drop-shadow-sm",
     "transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
   );
 
@@ -79,7 +79,7 @@ export const Progress = ({ className, pin, size, value, ...props }) => {
             }}
             className={cn(stylesLabel)}
           >
-            <span className="text-2xs text-main-goku text-center">
+            <span className="text-2xs text-goku text-center">
               {value + "%"}
             </span>
           </div>
@@ -119,7 +119,7 @@ Progress.defaultProps = {
 
 // Progress.Pin = ({ className, ...props }) => {
 //     const stylesPin = cn(
-//         ["size-4 bg-main-goten rounded-full drop-shadow-sm"],
+//         ["size-4 bg-goten rounded-full drop-shadow-sm"],
 //         'transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]'
 
 //     )

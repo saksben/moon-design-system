@@ -36,10 +36,10 @@ export const Checkbox = ({
 
   // Checkbox base styles
   const styleCheckbox = cn(
-    "inline-block flex items-center justify-center size-svg-3 rounded-md text-main-goku transition ease-in-out duration-200",
+    "inline-block flex items-center justify-center size-svg-3 rounded-md text-goku transition ease-in-out duration-200",
     // Variant styles
     !check[0]
-      ? "bg-transparent border-[1.5px] border-main-trunks"
+      ? "bg-transparent border-[1.5px] border-trunks"
       : `bg-${bgColor}`,
     disabled && "opacity-[32%]"
   );
@@ -102,7 +102,7 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
-  bgColor: "main-piccolo",
+  bgColor: "piccolo",
   indeterminate: false,
   readOnly: false,
   disabled: false,

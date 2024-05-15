@@ -22,8 +22,8 @@ export const Input = ({
     "border rounded-md has-[:disabled]:opacity-[32%]",
     // Variant styles
     readOnly &&
-      "cursor-not-allowed has-[:focus]:border-main-beerus has-[:active]:border-main-beerus",
-    error ? "border-supportive-chiChi" : "border-main-beerus"
+      "cursor-not-allowed has-[:focus]:border-beerus has-[:active]:border-beerus",
+    error ? "border-chiChi" : "border-beerus"
   );
 
   // Style for fade-in when input is an InsetInput (for floating label)
@@ -41,13 +41,13 @@ export const Input = ({
     // Base styles
     [
       "transition-all ease-in-out duration-200",
-      "w-full block text-md bg-main-gohan placeholder-main-trunks text-main-bulma",
+      "w-full block text-md bg-gohan placeholder-trunks text-bulma",
       "outline-none rounded-md border-2",
-      "hover:border-hover-main-beerus hover:border-2",
-      "focus:border-main-piccolo focus:border-2",
-      "active:border-main-piccolo active:border-2",
+      "hover:border-hover-beerus hover:border-2",
+      "focus:border-piccolo focus:border-2",
+      "active:border-piccolo active:border-2",
       "disabled:hover:border-transparent disabled:focus:border-transparent disabled:cursor-not-allowed",
-      "invalid:border-supportive-chiChi invalid:border-2",
+      "invalid:border-chiChi invalid:border-2",
     ],
     // Variant styles
     {
@@ -61,7 +61,7 @@ export const Input = ({
           true: "cursor-not-allowed hover:border-transparent active:border-transparent focus:border-transparent",
         },
         error: {
-          true: "border-supportive-chiChi border-2 hover:border-supportive-chiChi focus:border-supportive-chiChi active:border-supportive-chiChi",
+          true: "border-chiChi border-2 hover:border-chiChi focus:border-chiChi active:border-chiChi",
           false: "border-transparent",
         },
       },

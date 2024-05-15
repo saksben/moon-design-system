@@ -5,9 +5,8 @@ import PropTypes from "prop-types";
 // Import the theme
 const theme = tailwindConfig.theme.extend.colors;
 
-// Colors are supposed to be border colors but the Figma file doesn't share those so I'm opening it up to any color or theme color (without opacity specification)
+// Colors are supposed to be on border color, but I'm making it just by color (theme colors and regular colors work)
 export const Loader = ({ color, size, ...props }) => {
-  const [themeName, themeColor] = color.split("-");
   const sizeList = {
     '2xs': 20,
     xs: 30,
@@ -17,14 +16,12 @@ export const Loader = ({ color, size, ...props }) => {
   }
   const sizing = sizeList[size];
   if (
-    themeName &&
-    themeColor &&
-    theme[themeName] &&
-    theme[themeName][themeColor]
+  theme[color]
   ) {
-    return <l-ring size={sizing} color={theme[themeName][themeColor]}></l-ring>;
+    return <l-ring size={sizing} color={theme[color]} {...props}></l-ring>;
   } else {
-    return <l-ring size={sizing} color={color}></l-ring>;
+    console.log(color)
+    return <l-ring size={sizing} color={color} {...props}></l-ring>;
   }
 };
 
@@ -34,6 +31,6 @@ Loader.propTypes = {
 };
 
 Loader.defaultProps = {
-  color: "main-hit",
+  color: "hit",
   size: "md",
 };
