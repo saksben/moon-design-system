@@ -7,7 +7,7 @@ export default {
 
 export const Default = {
   render: (args) => (
-    <InsetInput {...args} >
+    <InsetInput placeholder="Placeholder" {...args}>
       <InsetInput.Label>Label</InsetInput.Label>
     </InsetInput>
   ),
@@ -45,37 +45,37 @@ export const Disabled = {
 export const InputTypes = {
   render: (args) => (
     <>
-      <div className="flex gap-2">
-        <InsetInput type='number' {...args}>
-          <InsetInput.Label></InsetInput.Label>
+      <div className="flex flex-col lg:flex-row justify-around items-start w-full gap-2">
+        <InsetInput type="number" placeholder="e.g. 12345" {...args}>
+          <InsetInput.Label>Number</InsetInput.Label>
         </InsetInput>
-        <InsetInput type='date' {...args}>
-          <InsetInput.Label></InsetInput.Label>
+        <InsetInput type="date" aria-label="date" {...args}>
+          <InsetInput.Label>Date</InsetInput.Label>
         </InsetInput>
-        <InsetInput type='time' {...args}>
-          <InsetInput.Label></InsetInput.Label>
-        </InsetInput>
-      </div>
-      <div className="flex gap-2">
-        <InsetInput type='datetime-local' {...args}>
-          <InsetInput.Label></InsetInput.Label>
-        </InsetInput>
-        <InsetInput type='email' {...args}>
-          <InsetInput.Label></InsetInput.Label>
-        </InsetInput>
-        <InsetInput type='password' {...args}>
-          <InsetInput.Label></InsetInput.Label>
+        <InsetInput type="time" aria-label="time" {...args}>
+          <InsetInput.Label>Time</InsetInput.Label>
         </InsetInput>
       </div>
-      <div className="flex gap-2">
-        <InsetInput type='search' {...args}>
-          <InsetInput.Label></InsetInput.Label>
+      <div className="flex flex-col lg:flex-row justify-around items-start w-full gap-2">
+        <InsetInput type="datetime-local" aria-label="datetime-local" {...args}>
+          <InsetInput.Label>Datetime local</InsetInput.Label>
         </InsetInput>
-        <InsetInput type='tel' {...args}>
-          <InsetInput.Label></InsetInput.Label>
+        <InsetInput type="email" placeholder="e.g. john.doe@domain.com" {...args}>
+          <InsetInput.Label>Email</InsetInput.Label>
         </InsetInput>
-        <InsetInput type='url' {...args}>
-          <InsetInput.Label></InsetInput.Label>
+        <InsetInput type="password" placeholder="Password" {...args}>
+          <InsetInput.Label>Password</InsetInput.Label>
+        </InsetInput>
+      </div>
+      <div className="flex flex-col lg:flex-row justify-around items-start w-full gap-2">
+        <InsetInput type="search" placeholder="e.g. Search something" {...args}>
+          <InsetInput.Label>Search</InsetInput.Label>
+        </InsetInput>
+        <InsetInput type="tel" placeholder="e.g. +372 123 4567" {...args}>
+          <InsetInput.Label>Tel</InsetInput.Label>
+        </InsetInput>
+        <InsetInput type="url" placeholder="e.g. https://domain.com" {...args}>
+          <InsetInput.Label>Url</InsetInput.Label>
         </InsetInput>
       </div>
     </>

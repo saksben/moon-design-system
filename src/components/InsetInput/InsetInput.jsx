@@ -3,7 +3,9 @@ import { Input } from "../Input/Input";
 import PropTypes from "prop-types";
 import React from "react";
 
-const InputContext = React.createContext({ isFocused: false, type: "text" });
+const InputContext = React.createContext({ isFocused: false, type: "text", value: false, readOnly: false});
+
+// TODO: fix Label returning on blur when there is a value typed
 
 export const InsetInput = ({
   className,
@@ -11,6 +13,7 @@ export const InsetInput = ({
   error,
   readOnly,
   value,
+  placeholder,
   type,
   children,
   ...props
@@ -28,7 +31,7 @@ export const InsetInput = ({
 
   const stylesDiv = cn("relative");
 
-  const stylesInput = cn("h-14 p-4 pl-[1.0625rem] pb-0");
+  const stylesInput = cn("h-14 p-4 pl-[1.0625rem]", children && "pb-0");
 
   const handleFocus = () => {
     setFocus(true);
@@ -39,17 +42,18 @@ export const InsetInput = ({
   };
 
   return (
-    <InputContext.Provider value={{ isFocused, type: type }}>
+    <InputContext.Provider value={{ isFocused, type: type, value: value, readOnly: readOnly }}>
       <div className={cn(stylesDiv, className)}>
         <Input
           onFocus={handleFocus}
           onBlur={handleBlur}
-          fade={true}
+          fade={children && true}
           disabled={disabled}
           readOnly={readOnly}
           error={error}
           type={type}
           value={value}
+          placeholder={placeholder}
           className={cn(stylesInput, className)}
           {...props}
         />
@@ -70,12 +74,16 @@ InsetInput.propTypes = {
 };
 
 InsetInput.Label = ({ className, children, ...props }) => {
-  const { isFocused, type } = React.useContext(InputContext);
+  const { isFocused, type, value, readOnly } = React.useContext(InputContext);
 
   const stylesFloatLabel = cn(
     "absolute text-md text-trunks top-[1.125rem] left-5 pointer-events-none",
     "transition-all duration-200",
-    isFocused && "top-3 left-5 text-xs"
+    isFocused && !value && "top-3 left-5 text-xs",
+    readOnly && "top-3 left-5 text-xs",
+    type === "datetime-local" && "top-3 left-5 text-xs",
+    type === "date" && "top-3 left-5 text-xs",
+    type === "time" && "top-3 left-5 text-xs"
   );
 
   const typeList = {

@@ -10,6 +10,7 @@ export const Input = ({
   error,
   fade,
   readOnly,
+  disabled,
   type,
   children,
   className,
@@ -29,12 +30,12 @@ export const Input = ({
   // Style for fade-in when input is an InsetInput (for floating label)
   const styleFade = cn(
     fade &&
-      !readOnly &&
+      !readOnly && !disabled &&
       type !== "date" &&
       type !== "time" &&
       type !== "datetime-local" &&
-      "transition-all delay-100 duration-200 opacity-0 has-[:focus]:opacity-100"
-  );
+      "transition-all delay-100 duration-200 opacity-0 has-[:focus]:opacity-100",
+    );
 
   // Conditional styling for input
   const styleInput = cva(
@@ -91,6 +92,7 @@ export const Input = ({
       <div className={styleFade}>
         <input
           readOnly={readOnly}
+          disabled={disabled}
           className={cn(
             styleInput({ size, error, readOnly }),
             className,
@@ -110,8 +112,10 @@ Input.propTypes = {
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   error: PropTypes.bool,
   readOnly: PropTypes.bool,
+  disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   type: PropTypes.string,
+  fade: PropTypes.bool,
   className: PropTypes.string,
 };
 
