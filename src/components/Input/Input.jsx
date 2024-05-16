@@ -17,56 +17,55 @@ export const Input = ({
   ...props
 }) => {
   // Conditional styling for container div
-  const styleDiv = cn(
+  const styleDiv = cva(
     // Base styles
-    "transition ease-in-out duration-200",
-    "border rounded-md has-[:disabled]:opacity-[32%]",
-    // Variant styles
-    readOnly &&
-      "cursor-not-allowed has-[:focus]:border-beerus has-[:active]:border-beerus",
-    error ? "border-chiChi" : "border-beerus"
+    [
+      "transition-all ease-in-out duration-200",
+      "border-2 rounded-md has-[:disabled]:opacity-[32%]",
+      "has-[:hover]:border-hover-beerus",
+      "has-[:focus]:border-piccolo",
+      "has-[:disabled]:hover:border-beerus has-[:disabled]:focus:border-beerus has-[:disabled]:cursor-not-allowed",
+      // Variant styles
+      readOnly &&
+        "cursor-not-allowed has-[:hover]:border-beerus has-[:focus]:border-beerus has-[:active]:border-beerus",
+      error
+        ? "border-chiChi has-[:hover]:border-chiChi has-[:focus]:border-chiChi has-[:active]:border-chiChi"
+        : "border-beerus",
+        !readOnly && !disabled && "has-[:hover]:cursor-text"
+    ],
+    {
+      variants: {
+        size: {
+          sm: "py-1 px-2",
+          md: "px-3 py-2",
+          lg: "p-3",
+        },
+      },
+    }
   );
 
   // Style for fade-in when input is an InsetInput (for floating label)
-  const styleFade = cn(
+  const styleFade = cn([
     fade &&
-      !readOnly && !disabled &&
+      !readOnly &&
+      !disabled &&
       type !== "date" &&
       type !== "time" &&
       type !== "datetime-local" &&
       "transition-all delay-100 duration-200 opacity-0 has-[:focus]:opacity-100",
-    );
+  ]);
 
   // Conditional styling for input
-  const styleInput = cva(
+  const styleInput = cn(
     // Base styles
     [
       "transition-all ease-in-out duration-200",
-      "w-full block text-md bg-gohan placeholder-trunks text-bulma",
-      "outline-none rounded-md border-2",
-      "hover:border-hover-beerus hover:border-2",
-      "focus:border-piccolo focus:border-2",
-      "active:border-piccolo active:border-2",
-      "disabled:hover:border-transparent disabled:focus:border-transparent disabled:cursor-not-allowed",
-      "invalid:border-chiChi invalid:border-2",
-    ],
+      "w-full h-[100%] text-md bg-gohan placeholder-trunks text-bulma",
+      "outline-none",
+      "disabled:cursor-not-allowed",
+      readOnly && "cursor-not-allowed",
+    ]
     // Variant styles
-    {
-      variants: {
-        size: {
-          sm: "h-8 py-1 px-2",
-          md: "h-10 px-3 py-2",
-          lg: "h-12 p-3",
-        },
-        readOnly: {
-          true: "cursor-not-allowed hover:border-transparent active:border-transparent focus:border-transparent",
-        },
-        error: {
-          true: "border-chiChi border-2 hover:border-chiChi focus:border-chiChi active:border-chiChi",
-          false: "border-transparent",
-        },
-      },
-    }
   );
 
   // Default placeholders for some input types
@@ -85,26 +84,25 @@ export const Input = ({
   let placeHolder = types[type] || "";
 
   // Note: there isn't a way I know of to make this 1px default then 2px onHover or onFocus like the
-  // Figma file because of the input/textarea's border padding. So it's either this way (in which it
-  // looks just a little shiny at the corners), or make it 2px always (which I might end up doing)
+  // Figma file because of the input/textarea's border padding. So it's either style on input (in which it
+  // looks just a little shiny at the corners), or make it 2px always like it is now. Group component only works with the latter
   return (
-    <div className={cn(styleDiv)}>
-      <div className={styleFade}>
-        <input
-          readOnly={readOnly}
-          disabled={disabled}
-          className={cn(
-            styleInput({ size, error, readOnly }),
-            className,
-            "input"
-          )}
-          placeholder={placeHolder}
-          type={type}
-          {...props}
-        />
+    <label>
+      <div className={cn(styleDiv({ size }), className)}>
+        <div className={styleFade}>
+          <input
+            style={{ width: "100%" }}
+            readOnly={readOnly}
+            disabled={disabled}
+            className={cn(styleInput, "input")}
+            placeholder={placeHolder}
+            type={type}
+            {...props}
+          />
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+    </label>
   );
 };
 

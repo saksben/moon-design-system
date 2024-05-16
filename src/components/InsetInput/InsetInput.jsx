@@ -31,7 +31,7 @@ export const InsetInput = ({
 
   const stylesDiv = cn("relative");
 
-  const stylesInput = cn("h-14 p-4 pl-[1.0625rem]", children && "pb-0");
+  const stylesInput = cn("p-6 pl-[1.125rem]", children && "pb-2");
 
   const handleFocus = () => {
     setFocus(true);

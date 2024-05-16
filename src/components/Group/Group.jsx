@@ -6,7 +6,8 @@ import { InsetInput } from "../InsetInput/InsetInput";
 // import { InsetNativeSelect } from "../InsetNativeSelect";
 import { cn } from "../../utils/cn";
 
-// Will need to return once NativeSelect and InsetNativeSelect are made
+// TODO: Will need to return once NativeSelect and InsetNativeSelect are made
+// TODO: fine as is, but has 4px shared border so would be better to make all borders transparent except shared and style the wrapper div like an input
 
 const GroupContext = React.createContext({
   disabled: false,
@@ -69,7 +70,7 @@ Group.FirstInput = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
   const styleInput = cn(
     orientation === "horizontal" && "rounded-r-none",
-    orientation === "vertical" && "rounded-b-none"
+    orientation === "vertical" && "rounded-b-none",
   )
 
   return (
@@ -92,7 +93,7 @@ Group.LastInput = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
   const styleInput = cn(
     orientation === "horizontal" && "rounded-l-none",
-    orientation === "vertical" && "rounded-t-none"
+    orientation === "vertical" && "rounded-t-none",
   )
   return (
     <Input
@@ -114,7 +115,7 @@ Group.FirstInsetInput = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
   const styleInput = cn(
     orientation === "horizontal" && "rounded-r-none",
-    orientation === "vertical" && "rounded-b-none"
+    orientation === "vertical" && "rounded-b-none",
   )
   return (
     <InsetInput
@@ -135,8 +136,8 @@ Group.FirstInsetInput.propTypes = { className: PropTypes.string };
 Group.LastInsetInput = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
   const styleInput = cn(
-    orientation === "horizontal" && "rounded-r-none",
-    orientation === "vertical" && "rounded-b-none"
+    orientation === "horizontal" && "rounded-l-none",
+    orientation === "vertical" && "rounded-t-none"
   )
   return (
     <InsetInput
@@ -179,8 +180,8 @@ Group.FirstSelect.propTypes = { className: PropTypes.string };
 Group.LastSelect = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
   const styleSelect = cn(
-    orientation === "horizontal" && "rounded-r-none",
-    orientation === "vertical" && "rounded-b-none"
+    orientation === "horizontal" && "rounded-l-none",
+    orientation === "vertical" && "rounded-t-none"
   )
   return (
     <NativeSelect
@@ -223,8 +224,8 @@ Group.FirstInsetSelect.propTypes = { className: PropTypes.string };
 Group.LastInsetSelect = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
   const styleSelect = cn(
-    orientation === "horizontal" && "rounded-r-none",
-    orientation === "vertical" && "rounded-b-none"
+    orientation === "horizontal" && "rounded-l-none",
+    orientation === "vertical" && "rounded-t-none"
   )
   return (
     <InsetNativeSelect
