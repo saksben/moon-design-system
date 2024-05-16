@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Button } from "../Button/Button";
-import GenericCheckIcon from "../../assets/icons/components/GenericCheckAlternativeIcon"
+import GenericCheckAlternative from "../../assets/icons/components/GenericCheckAlternative";
 import { cva } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 import { Loader } from "../Loader/Loader";
@@ -14,6 +14,7 @@ export const IconButton = ({
   size,
   ...props
 }) => {
+  // Styles for Button
   const stylesButton = cva("", {
     variants: {
       size: {
@@ -26,6 +27,7 @@ export const IconButton = ({
     },
   });
 
+  // Styles for Icon
   const stylesIcon = cn(
     "size-svg-3 flex justify-center items-center ",
     size === "xs" && "size-svg-2"
@@ -33,17 +35,24 @@ export const IconButton = ({
 
   return (
     <Button
-      animation={animation === 'pulse' || animation === 'error' ? animation : ''}
-
+      animation={
+        animation === "pulse" || animation === "error" ? animation : ""
+      }
       className={cn(stylesButton({ size }), className)}
       {...props}
     >
+      {/* If it's a button with progress or success animation, show that instead of Icon */}
       {animation === "progress" ? (
         <span className={stylesIcon}>
-          <Loader size={size === "xs" || size === "sm" ? "2xs" : "xs"} color='goten' />
+          <Loader
+            size={size === "xs" || size === "sm" ? "2xs" : "xs"}
+            color="goten"
+          />
         </span>
       ) : animation === "success" ? (
-        <span className={stylesIcon}><GenericCheckIcon /></span>
+        <span className={stylesIcon}>
+          <GenericCheckAlternative />
+        </span>
       ) : (
         <span className={cn(stylesIcon)}>{icon}</span>
       )}

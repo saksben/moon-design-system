@@ -1,52 +1,62 @@
 import PropTypes from "prop-types";
 import { cn } from "../../utils/cn";
 
-export const TextArea = ({ error, readOnly, className, ...props }) => {
+export const TextArea = ({
+  error,
+  disabled,
+  readOnly,
+  className,
+  ...props
+}) => {
   // Conditional styling for container div
-  const styleDiv = cn(
+  const styleDiv = cn([
     // Base styles
-    "transition ease-in-out duration-200 border rounded-md has-[:disabled]:opacity-[32%]",
+    "transition-all ease-in-out duration-200",
+    "border-2 rounded-md has-[:disabled]:opacity-[32%] py-2 pt-4 px-2 pl-4",
+    "has-[:focus]:border-piccolo",
+    "has-[:hover]:border-hover-beerus",
+    "has-[:disabled]:hover:border-beerus has-[:disabled]:focus:border-beerus has-[:disabled]:cursor-not-allowed",
     // Variant styles
-    error == true ? "border-chiChi" : "border-beerus",
-    readOnly && "cursor-not-allowed"
-  );
+    readOnly &&
+      "cursor-not-allowed has-[:hover]:border-beerus has-[:focus]:border-beerus has-[:active]:border-beerus",
+    error
+      ? "border-chiChi has-[:hover]:border-chiChi has-[:focus]:border-chiChi has-[:active]:border-chiChi"
+      : "border-beerus",
+    !readOnly && !disabled && "hover:cursor-text",
+    !error && !readOnly && !disabled && "has-[:focus]:hover:border-piccolo",
+  ]);
 
   // Conditional styling for textarea
   const styleTextarea = cn(
     // Base styles
     "transition ease-in-out duration-200",
-    "pt-4 pl-4 w-full block text-md bg-gohan placeholder-trunks text-bulma outline-none resize-none rounded-md border-2",
-    "hover:border-hover-beerus hover:border-2",
-    "focus:border-piccolo focus:border-2",
-    "active:border-piccolo active:border-2",
-    "disabled:hover:border-transparent disabled:focus:border-transparent disabled:cursor-not-allowed",
-    "invalid:border-chiChi invalid:border-2",
-    // Variant styles
-    error == true
-      ? "border-chiChi hover:border-chiChi focus:border-chiChi active:border-chiChi"
-      : "border-transparent",
-    readOnly &&
-      "cursor-not-allowed hover:border-transparent active:border-transparent focus:border-transparent"
+    " w-full block text-md bg-gohan placeholder-trunks text-bulma outline-none resize-none",
+    "disabled:cursor-not-allowed",
+    readOnly && "cursor-not-allowed"
   );
 
   // Note: there isn't a way I know of to make this 1px default then 2px onHover or onFocus like the
-  // Figma file because of the input/textarea's border padding. So it's either this way (in which it
-  // looks just a little shiny at the corners), or make it 2px always (which I might end up doing)
+  // Figma file because of the input/textarea's border padding. So it's either style on input (in which it
+  // looks just a little shiny at the corners), or make it 2px always like it is now. Group component only works with the latter
   return (
     <>
-      <div className={cn(styleDiv)}>
-        <textarea
-          readOnly={readOnly}
-          className={cn(styleTextarea, className)}
-          {...props}
-        />
-      </div>
+      <label>
+        <div className={cn(styleDiv)}>
+          <textarea
+            disabled={disabled}
+            readOnly={readOnly}
+            className={cn(styleTextarea, className)}
+            {...props}
+          />
+        </div>
+      </label>
     </>
   );
 };
 
 TextArea.propTypes = {
   error: PropTypes.bool,
+  disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   className: PropTypes.string,
 };

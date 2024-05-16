@@ -27,6 +27,7 @@ export const Group = ({
   size,
   ...props
 }) => {
+  // Styles for Group
   const styleGroup = cn(
     "flex",
     orientation === "horizontal" && "flex-row", 
@@ -43,6 +44,7 @@ export const Group = ({
       }}
     >
       <div className={cn(styleGroup, className)} {...props}>
+        {/* Input or Select components will go here */}
         {children}
       </div>
     </GroupContext.Provider>
@@ -66,8 +68,10 @@ Group.defaultProps = {
   error: false,
 };
 
+// FirstInput component
 Group.FirstInput = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+  // Styles for Input
   const styleInput = cn(
     orientation === "horizontal" && "rounded-r-none",
     orientation === "vertical" && "rounded-b-none",
@@ -89,8 +93,10 @@ Group.FirstInput.displayName = "Group.FirstInput";
 
 Group.FirstInput.propTypes = { className: PropTypes.string };
 
+// LastInput component
 Group.LastInput = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+  // Styles for Input
   const styleInput = cn(
     orientation === "horizontal" && "rounded-l-none",
     orientation === "vertical" && "rounded-t-none",
@@ -111,8 +117,10 @@ Group.LastInput.displayName = "Group.LastInput";
 
 Group.LastInput.propTypes = { className: PropTypes.string };
 
+// FirstInsetInput component
 Group.FirstInsetInput = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+  // Styles for InsetInput
   const styleInput = cn(
     orientation === "horizontal" && "rounded-r-none",
     orientation === "vertical" && "rounded-b-none",
@@ -133,8 +141,10 @@ Group.FirstInsetInput.displayName = "Group.FirstInsetInput";
 
 Group.FirstInsetInput.propTypes = { className: PropTypes.string };
 
+// LastInsetInput component
 Group.LastInsetInput = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+  // Styles for InsetInput
   const styleInput = cn(
     orientation === "horizontal" && "rounded-l-none",
     orientation === "vertical" && "rounded-t-none"
@@ -155,8 +165,10 @@ Group.LastInsetInput.displayName = "Group.LastInsetInput";
 
 Group.LastInsetInput.propTypes = { className: PropTypes.string };
 
+// FirstSelect component
 Group.FirstSelect = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+  // Styles for NativeSelect
   const styleSelect = cn(
     orientation === "horizontal" && "rounded-r-none",
     orientation === "vertical" && "rounded-b-none"
@@ -177,8 +189,10 @@ Group.FirstSelect.displayName = "Group.FirstSelect";
 
 Group.FirstSelect.propTypes = { className: PropTypes.string };
 
+// LastSelect component
 Group.LastSelect = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+  // Styles for NativeSelect
   const styleSelect = cn(
     orientation === "horizontal" && "rounded-l-none",
     orientation === "vertical" && "rounded-t-none"
@@ -199,8 +213,10 @@ Group.LastSelect.displayName = "Group.LastSelect";
 
 Group.LastSelect.propTypes = { className: PropTypes.string };
 
+// FirstInsetSelect component
 Group.FirstInsetSelect = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+  // Styles for InsetNativeSelect
   const styleSelect = cn(
     orientation === "horizontal" && "rounded-r-none",
     orientation === "vertical" && "rounded-b-none"
@@ -221,8 +237,10 @@ Group.FirstInsetSelect.displayName = "Group.FirstInsetSelect";
 
 Group.FirstInsetSelect.propTypes = { className: PropTypes.string };
 
+// LastInsetSelect component
 Group.LastInsetSelect = ({ className, ...props }) => {
   const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+  // Styles for InsetNativeSelect
   const styleSelect = cn(
     orientation === "horizontal" && "rounded-l-none",
     orientation === "vertical" && "rounded-t-none"

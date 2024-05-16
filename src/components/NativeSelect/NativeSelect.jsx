@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Input } from "../Input/Input";
 import { cva } from "class-variance-authority";
 import { cn } from "../../utils/cn";
-import GenericCheckAlternativeIcon from "../../assets/icons/components/GenericCheckAlternativeIcon";
+import GenericCheckAlternative from "../../assets/icons/components/GenericCheckAlternative";
 
 // Will need to return to this after the Dropdown component, because of the option background customization.
 // Note the way that Headless UI below takes care of the icon problem (using a dark bg): take off the select's default arrow, position your icon absolutely on the select, and remove pointer events so that you're clicking the select underneath
@@ -25,7 +25,7 @@ export const NativeSelect = () => {
             <option value="delayed">Delayed</option>
             <option value="canceled">Canceled</option>
           </select>
-          <GenericCheckAlternativeIcon className="group pointer-events-none absolute top-2.5 right-2.5 size-4 fill-white/60" />
+          <GenericCheckAlternative className="group pointer-events-none absolute top-2.5 right-2.5 size-4 fill-white/60" />
         </div>
       </div>
     </>

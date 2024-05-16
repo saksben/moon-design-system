@@ -1,4 +1,4 @@
-const ArrowsBoostIcon = ({ className }) => {
+const ArrowsBoost = ({ className }) => {
   return (
     <svg
       width="32"
@@ -19,4 +19,4 @@ const ArrowsBoostIcon = ({ className }) => {
   );
 };
 
-export default ArrowsBoostIcon;
+export default ArrowsBoost;

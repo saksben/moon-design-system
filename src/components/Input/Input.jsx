@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { cn } from "../../utils/cn";
 import { cva } from "class-variance-authority";
 
-// TODO: make the change notated below of moving the styles to the outer div and making it all 2px so that InsetInput works
-
 export const Input = ({
   size,
   error,
@@ -31,7 +29,8 @@ export const Input = ({
       error
         ? "border-chiChi has-[:hover]:border-chiChi has-[:focus]:border-chiChi has-[:active]:border-chiChi"
         : "border-beerus",
-        !readOnly && !disabled && "has-[:hover]:cursor-text"
+        !readOnly && !disabled && "hover:cursor-text",
+        !error && !readOnly && !disabled && "has-[:focus]:hover:border-piccolo",
     ],
     {
       variants: {
@@ -65,7 +64,6 @@ export const Input = ({
       "disabled:cursor-not-allowed",
       readOnly && "cursor-not-allowed",
     ]
-    // Variant styles
   );
 
   // Default placeholders for some input types

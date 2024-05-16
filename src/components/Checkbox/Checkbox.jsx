@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { cn } from "../../utils/cn";
-import ControlsMinusIcon from "../../assets/icons/components/ControlsMinusIcon";
-import GenericCheckAlternativeIcon from "../../assets/icons/components/GenericCheckAlternativeIcon";
+import ControlsMinus from "../../assets/icons/components/ControlsMinus";
+import GenericCheckAlternative from "../../assets/icons/components/GenericCheckAlternative";
 
 // TODO: state logic works, but for some reason doesn't update when manipulated in exercise code
 
@@ -75,12 +75,12 @@ export const Checkbox = ({
           {/* Render the appropriate icon for checkbox*/}
           <div className={cn(styleIndicator)}>
             {check[0] && !check[1] && (
-              <GenericCheckAlternativeIcon
+              <GenericCheckAlternative
                 className={cn(styleIcon, className)}
               />
             )}
             {check[0] && check[1] && (
-              <ControlsMinusIcon className={cn(styleIcon, className)} />
+              <ControlsMinus className={cn(styleIcon, className)} />
             )}
             {!check[0] && <div className={cn(styleIcon, className)}></div>}
           </div>

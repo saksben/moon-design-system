@@ -1,4 +1,4 @@
-const ControlsMinusIcon = ({ className }) => {
+const ControlsMinus = ({ className }) => {
   return (
     <svg
       width="32"
@@ -19,4 +19,4 @@ const ControlsMinusIcon = ({ className }) => {
   );
 };
 
-export default ControlsMinusIcon;
+export default ControlsMinus;

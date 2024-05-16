@@ -1,4 +1,4 @@
-const OtherFrameIcon = ({ className }) => {
+const OtherFrame = ({ className }) => {
   return (
     <svg
       width="32"
@@ -18,4 +18,4 @@ const OtherFrameIcon = ({ className }) => {
   );
 };
 
-export default OtherFrameIcon;
+export default OtherFrame;

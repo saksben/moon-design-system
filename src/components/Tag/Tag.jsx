@@ -14,14 +14,17 @@ export const Tag = ({
   size,
   ...props
 }) => {
+  // Conditional styling for container div
   // Figma specs say Tag has bg-popo text-goten, but I think it's better to have bg-bulma text-goku to be responsive to dark mode
   const stylesButton = cva(
+    // Base styles
     [
       "bg-bulma text-goku rounded px-2 font-bold hover:bg-bulma transition-none hover:cursor-auto active:scale-100 transform-none",
       isUppercase && "uppercase",
       iconLeft && "pl-0",
       iconRight && "pr-0",
     ],
+    // Variant styles
     {
       variants: {
         size: {
@@ -32,10 +35,12 @@ export const Tag = ({
     }
   );
 
+  // Styles for Icon wrapper
   const stylesContainer = cn(
     "flex justify-center items-center transform-none"
   );
 
+  // Styles for Icon
   const stylesIcon = cva(
     [
       "size-svg-2 flex justify-center items-center",
@@ -53,10 +58,13 @@ export const Tag = ({
   return (
     <Button className={cn(stylesButton({ size }), className)} {...props}>
       <div className={stylesContainer}>
+        {/* Left Icon */}
         {iconLeft && (
           <span className={cn(stylesIcon({ size }))}>{iconLeft}</span>
         )}
+        {/* Children */}
         {children}
+        {/* Right Icon */}
         {iconRight && (
           <span className={cn(stylesIcon({ size }))}>{iconRight}</span>
         )}

@@ -2,11 +2,12 @@ import PropTypes from "prop-types";
 import { cn } from "../../utils/cn";
 import { cva } from "class-variance-authority";
 
-// TODO: make Progress.Pin its own component to conform to Moon.io site method, instead of a prop
+// TODO: make Progress.Pin its own component with useContext to conform to Moon.io site method, instead of a prop
 // TODO: the pin has parts that revolve around each other instead of moving together. Fix this.
 // The Default progress bar works perfectly
 
 export const Progress = ({ className, pin, size, value, ...props }) => {
+  // Styles for Root div
   // Background is beerus because Figma's opacity affects indicator bar since Root wraps Indicator
   // overflow-hidden to fix clipping in Safari
   // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
@@ -22,10 +23,12 @@ export const Progress = ({ className, pin, size, value, ...props }) => {
     },
   });
 
+  // Styles for container bar
   const stylesBar = cn(
     "progress-bar-container absolute bg-trunks opacity-[0.25] h-full w-full rounded-full"
   );
 
+  // Styles for indicator bar
   // Automatically has smooth progress. Can be changed by giving className='transition-none'
   const stylesIndicator = cn([
     "progress",
@@ -33,21 +36,25 @@ export const Progress = ({ className, pin, size, value, ...props }) => {
     "transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]",
   ]);
 
+  // Styles for pin container div
   const stylesPinContainer = cn([
     "absolute top-1/2 transform -translate-y-1/2",
     "transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]",
   ]);
 
+  // Styles for pin
   const stylesPin = cn(
     ["size-4 bg-goten rounded-full drop-shadow-sm"],
     " transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
   );
 
+  // Styles for label
   const stylesLabel = cn(
     "absolute size-8 rounded bg-bulma rounded-full flex justify-center items-center drop-shadow-sm",
     "transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
   );
 
+  // Bandaid for pin overshooting bar limits
   const prog = value > 50 ? value - 1 : value < 1 ? 1 : value;
 
   return (
@@ -56,7 +63,9 @@ export const Progress = ({ className, pin, size, value, ...props }) => {
         style={{ transform: "translateZ(0)" }}
         className={cn(stylesRoot({ size }), className)}
       >
+        {/* Container bar */}
         <div className={stylesBar}></div>
+        {/* Indicator bar */}
         <div
           // Need to update value with state and a useEffect timer outside of component
           style={{
@@ -66,11 +75,14 @@ export const Progress = ({ className, pin, size, value, ...props }) => {
         ></div>
       </div>
 
+          {/* Pin */}
       {pin && (
+        // Pin container
         <div
           style={{ left: `${prog}%`, transition: "left 660ms ease" }}
           className={cn(stylesPinContainer)}
         >
+          {/* Pin label */}
           <div
             style={{
               left: `${value}%`,
@@ -83,6 +95,7 @@ export const Progress = ({ className, pin, size, value, ...props }) => {
               {value + "%"}
             </span>
           </div>
+          {/* Pin thumb */}
           <div
             style={{
               left: `${value}%`,
@@ -112,8 +125,6 @@ Progress.defaultProps = {
 
 // , transform: `translateX(-${100 - prog}%)`
 // left: `${prog}%`
-
-// I couldn't figure out how to pass {value} to Progress.Pin in a way that conformed to Moon.io's site method, so I'm doing it my way for now, which is setting a 'pin' prop
 
 // Progress.displayName = "Progress";
 

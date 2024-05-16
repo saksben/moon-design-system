@@ -1,5 +1,5 @@
 import { Tag } from "./Tag";
-import OtherFrameIcon from "../../assets/icons/components/OtherFrameIcon"
+import OtherFrame from "../../assets/icons/components/OtherFrame"
 import ControlsClose from "../../assets/icons/components/ControlsClose"
 
 export default {
@@ -15,7 +15,7 @@ export const Default = {
 
 export const LeftIcon = {
     render: (args) => (
-        <Tag iconLeft={<OtherFrameIcon />} {...args}>Left Icon</Tag>
+        <Tag iconLeft={<OtherFrame />} {...args}>Left Icon</Tag>
     )
 }
 
@@ -27,7 +27,7 @@ export const RightIcon = {
 
 export const BothIcons = {
     render: (args) => (
-        <Tag iconLeft={<OtherFrameIcon />} iconRight={<ControlsClose />} {...args}>
+        <Tag iconLeft={<OtherFrame />} iconRight={<ControlsClose />} {...args}>
       Both icons
     </Tag>
     )

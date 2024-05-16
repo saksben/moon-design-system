@@ -1,4 +1,4 @@
-const GenericCheckAlternativeIcon = ({ className }) => {
+const GenericCheckAlternative = ({ className }) => {
   return (
     <svg
       width="32"
@@ -19,4 +19,4 @@ const GenericCheckAlternativeIcon = ({ className }) => {
   );
 };
 
-export default GenericCheckAlternativeIcon;
+export default GenericCheckAlternative;

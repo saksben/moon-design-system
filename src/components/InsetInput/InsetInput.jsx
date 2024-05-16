@@ -3,9 +3,10 @@ import { Input } from "../Input/Input";
 import PropTypes from "prop-types";
 import React from "react";
 
-const InputContext = React.createContext({ isFocused: false, type: "text", value: false, readOnly: false});
-
 // TODO: fix Label returning on blur when there is a value typed
+
+// Context to pass to Label
+const InputContext = React.createContext({ isFocused: false, type: "text", value: false, readOnly: false});
 
 export const InsetInput = ({
   className,
@@ -18,6 +19,7 @@ export const InsetInput = ({
   children,
   ...props
 }) => {
+  // Determines whether Label should already be moved
   const defaultFocus =
     value ||
     disabled ||
@@ -29,14 +31,18 @@ export const InsetInput = ({
       : false;
   const [isFocused, setFocus] = React.useState(defaultFocus);
 
+  // Style for container div
   const stylesDiv = cn("relative");
 
+  // Styles for Input
   const stylesInput = cn("p-6 pl-[1.125rem]", children && "pb-2");
 
+  // Sets focus onFocus for Label
   const handleFocus = () => {
     setFocus(true);
   };
 
+  // Sets blur onBlur for Label
   const handleBlur = () => {
     !readOnly && !disabled && setFocus(false);
   };
@@ -73,9 +79,11 @@ InsetInput.propTypes = {
   type: PropTypes.string,
 };
 
+// Label component
 InsetInput.Label = ({ className, children, ...props }) => {
   const { isFocused, type, value, readOnly } = React.useContext(InputContext);
 
+  // Styles for Label
   const stylesFloatLabel = cn(
     "absolute text-md text-trunks top-[1.125rem] left-5 pointer-events-none",
     "transition-all duration-200",
@@ -86,6 +94,7 @@ InsetInput.Label = ({ className, children, ...props }) => {
     type === "time" && "top-3 left-5 text-xs"
   );
 
+  // Values depending on type
   const typeList = {
     number: "Number",
     date: "Date",

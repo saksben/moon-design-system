@@ -2,9 +2,7 @@ import { cn } from "../../utils/cn";
 import { cva } from "class-variance-authority";
 import "ldrs/ring";
 import { Loader } from "../Loader/Loader";
-
-// TODO: Progress animation Loader needs to have responsive sizing. Look at IconButton for example.
-// TODO: Success animation is just the button it turns into on Success (a checkmark)
+import GenericCheckAlternative from "../../assets/icons/components/GenericCheckAlternative";
 
 // PropTypes defined in ./Button
 export const ButtonBase = ({
@@ -61,12 +59,10 @@ export const ButtonBase = ({
           ],
         },
         // I have no idea what the "true" or "false" animations do
-        // I also don't see any difference that "success" has from a regular Button with an icon as {children}
         animation: {
           progress: "px-8",
-          success: "",
-          error:
-            "bg-chiChi text-goten hover:bg-chiChi",
+          success: "px-8",
+          error: "bg-chiChi text-goten hover:bg-chiChi",
           pulse: "animate-bounce-x",
         },
       },
@@ -78,15 +74,14 @@ export const ButtonBase = ({
     "absolute inset-0 bg-inherit rounded-lg animate-ping-slow"
   );
 
-  // Style for div containing children, icons, and progress animation
-  const stylesContainer = cn(
-    "flex justify-center items-center"
-  );
+  // Style for div containing children, icons, and progress and success animations
+  const stylesContainer = cn("flex justify-center items-center");
 
   // Icon styles
   const stylesIcon = cva(
     [
       "size-svg-3 flex justify-center items-center group-active:size-[1.375rem] transform scale-100 group-active:scale-95",
+      size === "xs" && "size-svg-2",
       !disabled && "transition-all ease-in-out duration-200",
     ],
     {
@@ -119,17 +114,26 @@ export const ButtonBase = ({
           {animation === "pulse" && <span className={cn(stylesPulse)}></span>}
 
           <div className={cn(stylesContainer)}>
-            {/* iconLeft icon */}
+            {/* Left icon */}
             {iconLeft && (
               <span className={cn(stylesIcon({ size }))}>{iconLeft}</span>
             )}
-            {/* progress animation loader icon */}
-            {animation === "progress" && (
-              <Loader size='xs' color='goten' />
+            {/* If it's a button with progress or success animation, show that instead of children */}
+            {animation === "progress" ? (
+              <span className={stylesIcon}>
+                <Loader
+                  size={size === "xs" || size === "sm" ? "2xs" : "xs"}
+                  color="goten"
+                />
+              </span>
+            ) : animation === "success" ? (
+              <span className={stylesIcon}>
+                <GenericCheckAlternative />
+              </span>
+            ) : (
+              <span>{children}</span>
             )}
-            {/* Children from user */}
-            {children}
-            {/* iconRight icon */}
+            {/* Right icon */}
             {iconRight && (
               <span className={cn(stylesIcon({ size }))}>{iconRight}</span>
             )}

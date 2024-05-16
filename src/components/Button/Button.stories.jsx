@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import OtherFrameIcon from "../../assets/icons/components/OtherFrameIcon";
+import OtherFrame from "../../assets/icons/components/OtherFrame";
 import { Button } from "./Button";
 
 export default {
@@ -48,14 +48,14 @@ export const FullWidth = {
 export const IconLeft = {
   args: {
     children: "IconLeft",
-    iconLeft: <OtherFrameIcon />,
+    iconLeft: <OtherFrame />,
   },
 };
 
 export const IconRight = {
   args: {
     children: "IconRight",
-    iconRight: <OtherFrameIcon />,
+    iconRight: <OtherFrame />,
   },
 };
 
@@ -83,6 +83,13 @@ export const Progress = {
   name: "Animation: Progress",
   args: {
     animation: 'progress'
+  }
+}
+
+export const Success = {
+  name: "Animation: Success",
+  args: {
+    animation: 'success'
   }
 }
 
