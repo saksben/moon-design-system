@@ -3,6 +3,9 @@ import { cva } from "class-variance-authority";
 import "ldrs/ring";
 import { Loader } from "../Loader/Loader";
 
+// TODO: Progress animation Loader needs to have responsive sizing. Look at IconButton for example.
+// TODO: Success animation is just the button it turns into on Success (a checkmark)
+
 // PropTypes defined in ./Button
 export const ButtonBase = ({
   animation,

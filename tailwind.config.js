@@ -6,7 +6,6 @@ export default {
     extend: {
       colors: {
         // The main colors depend on whether using light/dark theme, so must use variables
-
         piccolo: "rgb(var(--color-piccolo))",
         jiren: "rgba(var(--color-jiren), var(--opacity-jiren))",
         hit: "rgb(var(--color-hit))",
@@ -47,7 +46,6 @@ export default {
         nappa: "rgb(var(--supportive-nappa))",
         "nappa-60": "rgba(var(--supportive-nappa), 0.56)",
         "nappa-10": "rgba(var(--supportive-nappa), 0.12)",
-
         // Original Figma design creates hover effect with a <span> underlay in a <Hover /> component; maybe in the future, but I'm going simple with hard-coded hovering
         hover: {
           piccolo: "rgba(var(--hover-piccolo))",
@@ -62,6 +60,7 @@ export default {
           trunks: "rgba(var(--hover-trunks))",
           goten: "rgba(var(--hover-goten))",
           popo: "rgba(var(--hover-popo))",
+          
           krillin: "rgba(var(--hover-krillin-100))",
           chiChi: "rgba(var(--hover-chiChi-100))",
           roshi: "rgba(var(--hover-roshi-100))",
