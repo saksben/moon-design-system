@@ -80,13 +80,13 @@ export const ButtonBase = ({
 
   // Style for div containing children, icons, and progress animation
   const stylesContainer = cn(
-    "flex justify-center items-center transform scale-100 group-active:scale-95"
+    "flex justify-center items-center"
   );
 
   // Icon styles
   const stylesIcon = cva(
     [
-      "size-svg-3 flex justify-center items-center group-active:size-[1.375rem]",
+      "size-svg-3 flex justify-center items-center group-active:size-[1.375rem] transform scale-100 group-active:scale-95",
       !disabled && "transition-all ease-in-out duration-200",
     ],
     {

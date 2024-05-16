@@ -60,7 +60,7 @@ export default {
           trunks: "rgba(var(--hover-trunks))",
           goten: "rgba(var(--hover-goten))",
           popo: "rgba(var(--hover-popo))",
-          
+
           krillin: "rgba(var(--hover-krillin-100))",
           chiChi: "rgba(var(--hover-chiChi-100))",
           roshi: "rgba(var(--hover-roshi-100))",
@@ -213,7 +213,7 @@ export default {
         sans: ["DM Sans", "Roboto"],
       },
       fontSize: {
-        "3xs": "0.5625rem", // 9px
+        "3xs": "0.5rem", // 8px (the theme doesn't like when I put as 0.5625rem)
         "2xs": "0.625rem", // 10px
         xs: "0.75rem", // 12px
         sm: "0.875rem", // 14px
