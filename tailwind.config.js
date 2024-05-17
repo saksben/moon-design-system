@@ -258,6 +258,7 @@ export default {
         "bounce-x": "bounce-x 1s infinite", // Horizontal bounce
         "ping-slow": "ping 2s cubic-bezier(0, 0, 0.2, 1) infinite", // Pulse effect for ping
       },
+      // Note: Figma specs didn't specify border radius values
     },
   },
   variants: {
