@@ -3,8 +3,6 @@ import { cn } from "../../utils/cn";
 import { Button } from "../Button/Button";
 import PropTypes from "prop-types";
 
-// Need to remove click transitions etc
-
 export const Tag = ({
   children,
   className,
@@ -43,13 +41,13 @@ export const Tag = ({
   // Styles for Icon
   const stylesIcon = cva(
     [
-      "size-svg-2 flex justify-center items-center",
+      "flex justify-center items-center",
     ],
     {
       variants: {
         size: {
-          "2xs": ["size-svg-1 m-[0.125rem]", iconLeft && "mr-1", iconRight && "ml-1"],
-          xs: "mx-1",
+          "2xs": ["size-[0.75rem] m-[0.125rem]", iconLeft && "mr-1", iconRight && "ml-1"],
+          xs: "mx-1 size-svg-2",
         },
       },
     }
@@ -66,7 +64,7 @@ export const Tag = ({
         {children}
         {/* Right Icon */}
         {iconRight && (
-          <span className={cn(stylesIcon({ size }))}>{iconRight}</span>
+          <span className={cn( "size-svg-1", stylesIcon({ size }))}>{iconRight}</span>
         )}
       </div>
     </Button>

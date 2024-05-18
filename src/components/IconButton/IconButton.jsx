@@ -29,8 +29,8 @@ export const IconButton = ({
 
   // Styles for Icon
   const stylesIcon = cn(
-    "size-svg-3 flex justify-center items-center ",
-    size === "xs" && "size-svg-2"
+    "flex justify-center items-center ",
+    size === "xs" ? "size-svg-2" : "size-svg-3"
   );
 
   return (

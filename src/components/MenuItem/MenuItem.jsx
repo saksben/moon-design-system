@@ -1,4 +1,8 @@
 
+MenuItem.PropTypes = {
+    className: PropTypes.string.isRequired,
+}
+
 // Return when Radio done
 
 // Loosely based on Button, probably at least is a button

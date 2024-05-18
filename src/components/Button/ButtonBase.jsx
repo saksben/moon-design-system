@@ -80,18 +80,18 @@ export const ButtonBase = ({
   // Icon styles
   const stylesIcon = cva(
     [
-      "size-svg-3 flex justify-center items-center group-active:size-[1.375rem] transform scale-100 group-active:scale-95",
-      size === "xs" && "size-svg-2",
+      "flex justify-center items-center group-active:size-[1.375rem] transform scale-100 group-active:scale-95",
       !disabled && "transition-all ease-in-out duration-200",
+      size === "xs" ? "size-svg-2" : "size-svg-3",
     ],
     {
       variants: {
         size: {
-          xs: "mx-1",
-          sm: "mx-1",
-          md: "mx-2",
-          lg: "mx-3",
-          xl: "mx-4",
+          xs: "mx-1 size-svg-2",
+          sm: "mx-1 size-svg-3 ",
+          md: "mx-2 size-svg-3 ",
+          lg: "mx-3 size-svg-3 ",
+          xl: "mx-4 size-svg-3 ",
         },
       },
     }

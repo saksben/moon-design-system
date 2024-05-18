@@ -5,6 +5,7 @@ import ControlsMinus from "../../assets/icons/components/ControlsMinus";
 import GenericCheckAlternative from "../../assets/icons/components/GenericCheckAlternative";
 
 // TODO: state logic works, but for some reason doesn't update when manipulated in exercise code
+  // May need state logic in this component even if the user creates state logic
 
 export const Checkbox = ({
   bgColor,

@@ -29,8 +29,8 @@ export const Input = ({
       error
         ? "border-chiChi has-[:hover]:border-chiChi has-[:focus]:border-chiChi has-[:active]:border-chiChi"
         : "border-beerus",
-        !readOnly && !disabled && "hover:cursor-text",
-        !error && !readOnly && !disabled && "has-[:focus]:hover:border-piccolo",
+      !readOnly && !disabled && "hover:cursor-text",
+      !error && !readOnly && !disabled && "has-[:focus]:hover:border-piccolo",
     ],
     {
       variants: {
@@ -88,6 +88,8 @@ export const Input = ({
     <label>
       <div className={cn(styleDiv({ size }), className)}>
         <div className={styleFade}>
+          {/* has children for components like TagsInput */}
+          {children}
           <input
             style={{ width: "100%" }}
             readOnly={readOnly}
@@ -98,7 +100,6 @@ export const Input = ({
             {...props}
           />
         </div>
-        {children}
       </div>
     </label>
   );

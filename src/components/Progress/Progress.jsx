@@ -3,6 +3,7 @@ import { cn } from "../../utils/cn";
 import { cva } from "class-variance-authority";
 
 // TODO: make Progress.Pin its own component with useContext to conform to Moon.io site method, instead of a prop
+  // The label is basically a tooltip
 // TODO: the pin has parts that revolve around each other instead of moving together. Fix this.
 // The Default progress bar works perfectly
 
