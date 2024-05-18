@@ -19,7 +19,7 @@ export const Input = ({
     // Base styles
     [
       "transition-all ease-in-out duration-200",
-      "border-2 rounded-md has-[:disabled]:opacity-[32%]",
+      "border-2 rounded-md has-[:disabled]:opacity-[32%] bg-gohan",
       "has-[:hover]:border-hover-beerus",
       "has-[:focus]:border-piccolo",
       "has-[:disabled]:hover:border-beerus has-[:disabled]:focus:border-beerus has-[:disabled]:cursor-not-allowed",
@@ -59,7 +59,7 @@ export const Input = ({
     // Base styles
     [
       "transition-all ease-in-out duration-200",
-      "w-full h-[100%] text-md bg-gohan placeholder-trunks text-bulma",
+      "w-full h-[100%] text-md bg-inherit placeholder-trunks text-bulma",
       "outline-none",
       "disabled:cursor-not-allowed",
       readOnly && "cursor-not-allowed",
