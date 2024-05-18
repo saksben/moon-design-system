@@ -47,7 +47,7 @@ export const TagsInput = ({
 
   return (
     <TagsInputContext.Provider
-      value={onClear}
+      value={[onClear, size, disabled]}
     >
       <div>
         <Input
@@ -61,7 +61,7 @@ export const TagsInput = ({
           value={value}
           onKeyDown={handleKeyDown}
           className={cn(className)}
-          {...props} //NOTE: console logs an error that this generates invalid props "0" and "1" for some reason. Removing {...props} fixes it.
+          {...props} // NOTE: console logs an error that this generates invalid props "0" and "1" for some reason. Removing {...props} fixes it.
         >
           <div className={cn(stylesChildWrapper)}>
             {children}
@@ -108,16 +108,22 @@ TagsInput.defaultProps = {
 
 // TagsInput.SelectedItem component
 TagsInput.SelectedItem = ({ index, className, label, ...props }) => {
-  const onClear = React.useContext(TagsInputContext);
+  const [onClear, size, disabled] = React.useContext(TagsInputContext);
 
   // When icon clicked, delete Tag
   const handleClick = () => {
-    onClear(index);
+    !disabled && onClear(index);
   };
+
+  const stylesIcon = cn(
+    'cursor-pointer', 
+    size === "sm" ? "size-svg-1": 'size-svg-2'
+  )
 
   return (
     <Tag
-      iconRight={<span onClick={handleClick}><ControlsClose className='cursor-pointer size-svg-2' /></span>}
+      size={size === "sm" ? "2xs" : "xs"}
+      iconRight={<span onClick={handleClick}><ControlsClose className={cn(stylesIcon)} /></span>}
       className={cn(className)}
       {...props}
     >
@@ -133,23 +139,3 @@ TagsInput.SelectedItem.propTypes = {
   index: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
 };
-
-// creates a div that takes up most of the width of the TagsInput. Tag is inline style
-
-// TAGSINPUT PROPS
-// selected: the selected dataset (required)
-// label: label title
-// size={size}
-// type
-// placeholder
-// error={isError}
-// disabled={disabled}
-// className
-// onEnter: function to select the text and append it to the tag set (tags can be added by pressing Enter). The adding of the tag pushes the
-// onClear: the function to remove the selected tag (tags can be removed by mouse click)
-
-// TAGSINPUT.SELECTEDITEM PROPS
-// className
-// index: key value of the item (required)
-// key={key}
-// isUppercase={isUppercase}
