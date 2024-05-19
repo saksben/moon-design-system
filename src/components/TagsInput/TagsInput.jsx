@@ -124,7 +124,7 @@ TagsInput.SelectedItem = ({ index, className, label, ...props }) => {
     <Tag
       size={size === "sm" ? "2xs" : "xs"}
       iconRight={<span onClick={handleClick}><ControlsClose className={cn(stylesIcon)} /></span>}
-      className={cn(className)}
+      className={cn(className, disabled && "hover:cursor-not-allowed")}
       {...props}
     >
       {label}
