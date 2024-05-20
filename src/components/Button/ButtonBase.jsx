@@ -62,7 +62,7 @@ export const ButtonBase = ({
         animation: {
           progress: "px-8",
           success: "px-8",
-          error: "bg-chiChi text-goten hover:bg-chiChi",
+          error: "bg-chichi text-goten hover:bg-chichi",
           pulse: "animate-bounce-x",
         },
       },

@@ -27,7 +27,7 @@ export const Input = ({
       readOnly &&
         "cursor-not-allowed has-[:hover]:border-beerus has-[:focus]:border-beerus has-[:active]:border-beerus",
       error
-        ? "border-chiChi has-[:hover]:border-chiChi has-[:focus]:border-chiChi has-[:active]:border-chiChi"
+        ? "border-chichi has-[:hover]:border-chichi has-[:focus]:border-chichi has-[:active]:border-chichi"
         : "border-beerus",
       !readOnly && !disabled && "hover:cursor-text",
       !error && !readOnly && !disabled && "has-[:focus]:hover:border-piccolo",
