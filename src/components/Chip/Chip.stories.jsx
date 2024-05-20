@@ -38,7 +38,7 @@ export const Icons = ({ ...args }) => {
         <Chip
           {...sharedProps}
           size="sm"
-          iconRight={<OtherFrame className="text-[24px]" />}
+          iconRight={<OtherFrame className="size-svg-3" />}
           {...args}
         >
           Right Icon
@@ -46,8 +46,8 @@ export const Icons = ({ ...args }) => {
         <Chip
           {...sharedProps}
           size="sm"
-          iconRight={<OtherFrame className="text-[24px]" />}
-          iconLeft={<OtherFrame className="text-[24px]" />}
+          iconRight={<OtherFrame className="size-svg-3" />}
+          iconLeft={<OtherFrame className="size-svg-3" />}
           {...args}
         >
           Left/Right Icons
@@ -55,7 +55,7 @@ export const Icons = ({ ...args }) => {
         <Chip
           {...sharedProps}
           size="sm"
-          iconOnly={<OtherFrame className="text-[24px]" />}
+          iconOnly={<OtherFrame className="size-svg-3" />}
           aria-label="Single icon"
           {...args}
         />
@@ -65,28 +65,28 @@ export const Icons = ({ ...args }) => {
         <Chip
           {...sharedProps}
           {...args}
-          iconLeft={<OtherFrame className="text-[24px]" />}
+          iconLeft={<OtherFrame className="size-svg-3" />}
         >
           Left Icon
         </Chip>
         <Chip
           {...sharedProps}
-          iconRight={<OtherFrame className="text-[24px]" />}
+          iconRight={<OtherFrame className="size-svg-3" />}
           {...args}
         >
           Right Icon
         </Chip>
         <Chip
           {...sharedProps}
-          iconRight={<OtherFrame className="text-[24px]" />}
-          iconLeft={<OtherFrame className="text-[24px]" />}
+          iconRight={<OtherFrame className="size-svg-3" />}
+          iconLeft={<OtherFrame className="size-svg-3" />}
           {...args}
         >
           Left/Right Icons
         </Chip>
         <Chip
           {...sharedProps}
-          iconOnly={<OtherFrame className="text-[24px]" />}
+          iconOnly={<OtherFrame className="size-svg-3" />}
           aria-label="Single icon"
           {...args}
         />
@@ -95,12 +95,19 @@ export const Icons = ({ ...args }) => {
   );
 };
 
+export const IsActive = {
+  args: {
+    isActive: true,
+    children: "Active",
+  },
+};
+
 export const HoverStroke = {
-    args: {
-        isStroke: true,
-        children: "Hover me"
-    }
-}
+  args: {
+    isStroke: true,
+    children: "Hover me",
+  },
+};
 
 export const Disabled = {
   args: {

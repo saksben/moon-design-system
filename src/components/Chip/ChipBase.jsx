@@ -3,6 +3,9 @@ import { cn } from "../../utils/cn";
 import { Button } from "../Button/Button";
 import { IconButton } from "../IconButton/IconButton";
 
+// TODO: The border is causing issues on isStroke because it's going from 1px to 2px
+// TODO: the shrinking from the Button/IconButton is at odds with the border color transition, may be fixed by wrapping in a div for the border
+
 export const ChipBase = ({
   children,
   disabled,
@@ -20,7 +23,7 @@ export const ChipBase = ({
 
   const stylesButton = cva(
     [
-      "font-regular hover:text-piccolo text-bulma transition-all ease-in-out duration-200",
+      "font-regular hover:text-piccolo text-bulma transition-none ease-in-out duration-200 active:scale-100 transform-none",
       isStroke && "hover:border-2 hover:border-piccolo",
       iconLeft && !iconRight && "mr-1",
       iconRight && !iconLeft && "ml-1",
@@ -33,43 +36,39 @@ export const ChipBase = ({
         },
         variant: {
           ghost: "bg-transparent",
-          default: [
-            "border-2 border-transparent bg-gohan",
-            isStroke && "hover:border-piccolo",
-          ],
+          default: ["border border-beerus bg-gohan"],
         },
       },
     }
   );
 
+  const stylesIsActive = cn(isActive && "bg-jiren text-piccolo");
+
+  const stylesContainer = cn("flex justify-center items-center transform-none")
+
   const stylesChildren = cn(
-    iconLeft && !iconRight && "mr-1",
-    iconRight && !iconLeft && "ml-1"
+    "mx-1"
   );
 
   return (
     <>
-      <div
+      <Component
+        disabled={disabled}
+        variant="ghost"
+        icon={iconOnly && iconOnly}
         className={cn(
-          variant !== "ghost" && "border border-beerus inline-block rounded-lg",
-          isStroke && "hover:border-transparent",
-          className
+          stylesButton({ size, variant }),
+          className,
+          stylesIsActive
         )}
+        {...props}
       >
-        <Component
-          disabled={disabled}
-          variant="ghost"
-          iconLeft={iconLeft}
-          iconRight={iconRight}
-          icon={iconOnly && iconOnly}
-          className={cn(stylesButton({ size, variant }), className)}
-          {...props}
-        >
-          <div className="flex justify-center items-center">
-            {children && <span className={stylesChildren}>{children}</span>}
-          </div>
-        </Component>
-      </div>
+        <div className={stylesContainer}>
+            {iconLeft && <span>{iconLeft}</span>}
+          {children && <span className={stylesChildren}>{children}</span>}
+          {iconRight && <span>{iconRight}</span>}
+        </div>
+      </Component>
     </>
   );
 };
