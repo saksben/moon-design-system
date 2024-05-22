@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { cn } from "../../utils/cn";
 
-export const TextArea = ({
+export const Textarea = ({
   error,
   disabled,
   readOnly,
@@ -54,13 +54,13 @@ export const TextArea = ({
   );
 };
 
-TextArea.propTypes = {
+Textarea.propTypes = {
   error: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   className: PropTypes.string,
 };
 
-TextArea.defaultProps = {
+Textarea.defaultProps = {
   error: false,
 };

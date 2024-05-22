@@ -1,8 +1,8 @@
-import { TextArea } from "./Textarea";
+import { Textarea } from "./Textarea";
 
 export default {
   title: "Core/Textarea",
-  component: TextArea,
+  component: Textarea,
 };
 
 export const Default = {
