@@ -1,4 +1,4 @@
-const ControlsMinus = ({ className }) => {
+const ControlsChevronDown = ({ className }) => {
   return (
     <svg
       width="32"
@@ -9,7 +9,7 @@ const ControlsMinus = ({ className }) => {
       className={className}
     >
       <path
-        d="M7.6001 16L24.4051 16"
+        d="M25 11.5L16 20.5L7 11.5"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -18,4 +18,4 @@ const ControlsMinus = ({ className }) => {
   );
 };
 
-export default ControlsMinus;
+export default ControlsChevronDown;

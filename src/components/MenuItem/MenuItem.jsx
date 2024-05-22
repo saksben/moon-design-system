@@ -1,41 +1,116 @@
+import { cn } from "../../utils/cn";
+import { MenuItemBase } from "./MenuItemBase";
+import { Checkbox } from "../Checkbox/Checkbox";
+import { Radio } from "../Radio/Radio";
+import React from "react";
+import PropTypes from "prop-types";
 
-MenuItem.PropTypes = {
-    className: PropTypes.string.isRequired,
-}
+// TODO: Radio button logic is not working. Registers click through Context down to MenuItem.Radio (though logs twice for some reason) but doesn't update from switched on
+// TODO: get radio/checkbox to be selected when any part of MenuItem is clicked
 
-// Return when Radio done
+const MenuContext = React.createContext(false);
 
-// Loosely based on Button, probably at least is a button
-// className determines width
-// MenuItem bg is transparent so inherits bg from parent container
-// spaces between (ex. Title + span, but Title aligns at start)
+// MenuItem component
+export const MenuItem = ({
+  as,
+  children,
+  href,
+  isSelected,
+  onClick,
+  target,
+  ...props
+}) => {
+  if (as === "a") {
+    // Link MenuItem
+    return (
+      <MenuContext.Provider value={isSelected}>
+        <a href={href} target={target}>
+          {
+            <MenuItemBase onClick={onClick} {...props}>
+              {children}
+            </MenuItemBase>
+          }
+        </a>
+      </MenuContext.Provider>
+    );
+  } else {
+    // Button MenuItem
+    return (
+      <MenuContext.Provider value={isSelected}>
+        <MenuItemBase onClick={onClick} {...props}>
+          {children}
+        </MenuItemBase>
+      </MenuContext.Provider>
+    );
+  }
+};
 
-// ANATOMY
-// MenuItem Container
-// Nested element (optional)
-// Lead element (optional)
-// MenuItem title (title)
-// MenuItem label (deprecated)
-// Trailing element or meta (optional)
+MenuItem.propTypes = {
+  as: PropTypes.oneOf(["a", "button"]),
+  isActive: PropTypes.bool,
+  isSelected: PropTypes.bool,
+  className: PropTypes.string.isRequired,
+};
 
-// MenuItem.Title: determines text order when there is an icon. Aligns at start and fills up rest of row
-// MenuItem.MultiTitle: multiline component with props title (heading) and text (subheading).
-// MenuItem.Checkbox: a checkbox component
-// MenuItem.Radio: a radio component
+MenuItem.defaultProps = {
+  as: "button",
+};
 
-// Don't use multiple checkboxes/radios
-// No checkbox/radio on accordion menu
+// Title component
+MenuItem.Title = ({ children, ...props }) => {
+  return (
+    <>
+      <div className={cn("w-full text-start text-bulma")} {...props}>
+        {children}
+      </div>
+    </>
+  );
+};
 
-// OTHER PROPS
-// as: link
-// href
-// children: for text
-// isActive: Is MenuItem active, not for radio/checkbox. For things like default highlighting.
-// isSelected: Is MenuItem checked/unchecked, for radio/checkbox. I'm guessing the user uses useCallback to hand MenuItem a function that turns on focus, and a label wraps MenuItem plus its child (checkbox, radio)
-// onClick
+MenuItem.Title.displayName = "MenuItem.Title";
 
-// CUSTOMIZATION
-// swappable leading/trailing element (icon component child)
-// change font
-// change colors
-// height
+// MultiTitle component
+MenuItem.MultiTitle = ({ title, text, ...props }) => {
+  const stylesDiv = cn("flex flex-col flex-grow w-0");
+  const stylesText = cn("text-xs text-trunks truncate w-full text-start");
+  return (
+    <>
+      <div className={cn(stylesDiv)} {...props}>
+        <MenuItem.Title {...props}>{title}</MenuItem.Title>
+        <span className={stylesText} {...props}>
+          {text}
+        </span>
+      </div>
+    </>
+  );
+};
+
+MenuItem.MultiTitle.displayName = "MenuItem.MultiTitle";
+
+// Checkbox component
+MenuItem.Checkbox = ({ ...props }) => {
+  return (
+    <div className="flex justify-center items-center">
+      <Checkbox {...props} />
+    </div>
+  );
+};
+
+MenuItem.Checkbox.displayName = "MenuItem.Checkbox";
+
+// Radio component
+MenuItem.Radio = ({ ...props }) => {
+  const isSelected = React.useContext(MenuContext);
+  console.log("isSelected = " + isSelected);
+  return (
+    <div className="flex justify-center items-center">
+      <Radio {...props}>
+        <Radio.Option {...props}>
+          <Radio.Indicator data-checked={isSelected} {...props} />
+        </Radio.Option>
+      </Radio>
+    </div>
+  );
+};
+
+MenuItem.Radio.displayName = "MenuItem.Radio";

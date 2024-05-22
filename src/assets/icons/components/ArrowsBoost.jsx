@@ -13,7 +13,6 @@ const ArrowsBoost = ({ className }) => {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={className}
       />
     </svg>
   );
