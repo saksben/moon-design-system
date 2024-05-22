@@ -16,7 +16,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   return (
     <div>
       <Checkbox indeterminate checked={true} className=' size-10 bg-hit text-piccolo rounded-none border-chiChi border-2' />
-      <Input className='bg-main-hit' type='search' />
+      <Input className='bg-hit' type='search' />
       <ArrowsBoost />
       {/* to add an icon, you would need to wrap everything in a div, collect its state from the descendant using 'has', use flex, and put the icon and other component in that div */}
       <button
@@ -31,127 +31,127 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       </button>
       <div style={{ display: "flex" }}>
         <div>
-          <div className="bg-main-piccolo hover:bg-hover-main-piccolo text-main-goten">
+          <div className="bg-piccolo hover:bg-hover-piccolo text-goten">
             <button>Piccolo</button>
           </div>
-          <div className="bg-main-jiren hover:bg-hover-main-jiren text-main-piccolo">
+          <div className="bg-jiren hover:bg-hover-jiren text-piccolo">
             <button>Jiren</button>
           </div>
-          <div className="bg-main-hit hover:bg-hover-main-hit text-main-goku">
+          <div className="bg-hit hover:bg-hover-hit text-goku">
             <button>Hit</button>
           </div>
-          <div className="bg-main-heles hover:bg-hover-main-heles text-main-bulma">
+          <div className="bg-heles hover:bg-hover-heles text-bulma">
             <button>Heles</button>
           </div>
-          <div className="bg-main-beerus hover:bg-hover-main-beerus text-main-trunks">
+          <div className="bg-beerus hover:bg-hover-beerus text-trunks">
             <button>Beerus</button>
           </div>
-          <div className="bg-main-goku hover:bg-hover-main-goku text-main-trunks">
+          <div className="bg-goku hover:bg-hover-goku text-trunks">
             <button>Goku</button>
           </div>
-          <div className="bg-main-gohan hover:bg-hover-main-gohan text-main-trunks">
+          <div className="bg-gohan hover:bg-hover-gohan text-trunks">
             <button>Gohan</button>
           </div>
-          <div className="bg-main-zeno hover:bg-hover-main-zeno text-main-trunks">
+          <div className="bg-zeno hover:bg-hover-zeno text-trunks">
             <button>Zeno</button>
           </div>
-          <div className="bg-main-bulma hover:bg-hover-main-bulma text-main-trunks">
+          <div className="bg-bulma hover:bg-hover-bulma text-trunks">
             <button>Bulma</button>
           </div>
-          <div className="bg-main-trunks hover:bg-hover-main-trunks text-main-goku">
+          <div className="bg-trunks hover:bg-hover-trunks text-goku">
             <button>Trunks</button>
           </div>
-          <div className="bg-main-goten hover:bg-hover-main-goten text-main-trunks">
+          <div className="bg-goten hover:bg-hover-goten text-trunks">
             <button>Goten</button>
           </div>
-          <div className="bg-main-popo hover:bg-hover-main-popo text-main-trunks">
+          <div className="bg-popo hover:bg-hover-popo text-trunks">
             <button>Popo</button>
           </div>
         </div>
         <div>
-          <div className="bg-supportive-krillin-100 hover:bg-hover-supportive-krillin-100 text-supportive-krillin-100">
+          <div className="bg-krillin hover:bg-hover-krillin text-popo">
             <button>Krillin</button>
           </div>
-          <div className="bg-supportive-chiChi-100 hover:bg-hover-supportive-chiChi-100 text-supportive-chiChi-100">
+          <div className="bg-chichi hover:bg-hover-chichi text-popo">
             <button>Chi-Chi</button>
           </div>
-          <div className="bg-supportive-roshi-100 hover:bg-hover-supportive-roshi-100 text-supportive-roshi-100">
+          <div className="bg-roshi hover:bg-hover-roshi text-popo">
             <button>Roshi</button>
           </div>
-          <div className="bg-supportive-dodoria-100 hover:bg-hover-supportive-dodoria-100 text-supportive-dodoria-100">
+          <div className="bg-dodoria hover:bg-hover-dodoria text-popo">
             <button>Dodoria</button>
           </div>
-          <div className="bg-supportive-cell-100 hover:bg-hover-supportive-cell-100 text-supportive-cell-100">
+          <div className="bg-cell hover:bg-hover-cell text-popo">
             <button>Cell</button>
           </div>
-          <div className="bg-supportive-raditz-100 hover:bg-hover-supportive-raditz-100 text-supportive-raditz-100">
+          <div className="bg-raditz hover:bg-hover-raditz text-popo">
             <button>Raditz</button>
           </div>
-          <div className="bg-supportive-whis-100 hover:bg-hover-supportive-whis-100 text-supportive-whis-100">
+          <div className="bg-whis hover:bg-hover-whis text-popo">
             <button>Whis</button>
           </div>
-          <div className="bg-supportive-frieza-100 hover:bg-hover-supportive-frieza-100 text-supportive-frieza-100">
+          <div className="bg-frieza hover:bg-hover-frieza text-popo">
             <button>Frieza</button>
           </div>
-          <div className="bg-supportive-nappa-100 hover:bg-hover-supportive-nappa-100 text-supportive-nappa-100">
+          <div className="bg-nappa hover:bg-hover-nappa text-popo">
             <button>Nappa</button>
           </div>
         </div>
         <div>
-          <div className="bg-supportive-krillin-60 hover:bg-hover-supportive-krillin-60 text-supportive-krillin-60">
+          <div className="bg-krillin-60 hover:bg-hover-krillin-60 text-popo">
             <button>Krillin-60</button>
           </div>
-          <div className="bg-supportive-chiChi-60 hover:bg-hover-supportive-chiChi-60 text-supportive-chiChi-60">
+          <div className="bg-chichi-60 hover:bg-hover-chichi-60 text-popo">
             <button>Chi-Chi-60</button>
           </div>
-          <div className="bg-supportive-roshi-60 hover:bg-hover-supportive-roshi-60 text-supportive-roshi-60">
+          <div className="bg-roshi-60 hover:bg-hover-roshi-60 text-popo">
             <button>Roshi-60</button>
           </div>
-          <div className="bg-supportive-dodoria-60 hover:bg-hover-supportive-dodoria-60 text-supportive-dodoria-60">
+          <div className="bg-dodoria-60 hover:bg-hover-dodoria-60 text-popo">
             <button>Dodoria-60</button>
           </div>
-          <div className="bg-supportive-cell-60 hover:bg-hover-supportive-cell-60 text-supportive-cell-60">
+          <div className="bg-cell-60 hover:bg-hover-cell-60 text-popo">
             <button>Cell-60</button>
           </div>
-          <div className="bg-supportive-raditz-60 hover:bg-hover-supportive-raditz-60 text-supportive-raditz-60">
+          <div className="bg-raditz-60 hover:bg-hover-raditz-60 text-popo">
             <button>Raditz-60</button>
           </div>
-          <div className="bg-supportive-whis-60 hover:bg-hover-supportive-whis-60 text-supportive-whis-60">
+          <div className="bg-whis-60 hover:bg-hover-whis-60 text-popo">
             <button>Whis-60</button>
           </div>
-          <div className="bg-supportive-frieza-60 hover:bg-hover-supportive-frieza-60 text-supportive-frieza-60">
+          <div className="bg-frieza-60 hover:bg-hover-frieza-60 text-popo">
             <button>Frieza-60</button>
           </div>
-          <div className="bg-supportive-nappa-60 hover:bg-hover-supportive-nappa-60 text-supportive-nappa-60">
+          <div className="bg-nappa-60 hover:bg-hover-nappa-60 text-popo">
             <button>Nappa-60</button>
           </div>
         </div>
         <div>
-          <div className="bg-supportive-krillin-10 hover:bg-hover-supportive-krillin-10 text-supportive-krillin-10">
+          <div className="bg-krillin-10 hover:bg-hover-krillin-10 text-popo">
             <button>Krillin-10</button>
           </div>
-          <div className="bg-supportive-chiChi-10 hover:bg-hover-supportive-chiChi-10 text-supportive-chiChi-10">
+          <div className="bg-chichi-10 hover:bg-hover-chichi-10 text-popo">
             <button>Chi-Chi-10</button>
           </div>
-          <div className="bg-supportive-roshi-10 hover:bg-hover-supportive-roshi-10 text-supportive-roshi-10">
+          <div className="bg-roshi-10 hover:bg-hover-roshi-10 text-popo">
             <button>Roshi-10</button>
           </div>
-          <div className="bg-supportive-dodoria-10 hover:bg-hover-supportive-dodoria-10 text-supportive-dodoria-10">
+          <div className="bg-dodoria-10 hover:bg-hover-dodoria-10 text-popo">
             <button>Dodoria-10</button>
           </div>
-          <div className="bg-supportive-cell-10 hover:bg-hover-supportive-cell-10 text-supportive-cell-10">
+          <div className="bg-cell-10 hover:bg-hover-cell-10 text-popo">
             <button>Cell-10</button>
           </div>
-          <div className="bg-supportive-raditz-10 hover:bg-hover-supportive-raditz-10 text-supportive-raditz-10">
+          <div className="bg-raditz-10 hover:bg-hover-raditz-10 text-popo">
             <button>Raditz-10</button>
           </div>
-          <div className="bg-supportive-whis-10 hover:bg-hover-supportive-whis-10 text-supportive-whis-10">
+          <div className="bg-whis-10 hover:bg-hover-whis-10 text-popo">
             <button>Whis-10</button>
           </div>
-          <div className="bg-supportive-frieza-10 hover:bg-hover-supportive-frieza-10 text-supportive-frieza-10">
+          <div className="bg-frieza-10 hover:bg-hover-frieza-10 text-popo">
             <button>Frieza-10</button>
           </div>
-          <div className="bg-supportive-nappa-10 hover:bg-hover-supportive-nappa-10 text-supportive-nappa-10">
+          <div className="bg-nappa-10 hover:bg-hover-nappa-10 text-popo">
             <button>Nappa-10</button>
           </div>
         </div>

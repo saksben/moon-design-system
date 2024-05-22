@@ -19,7 +19,7 @@ export const Input = ({
     // Base styles
     [
       "transition-all ease-in-out duration-200",
-      "border-2 rounded-md has-[:disabled]:opacity-[32%] bg-gohan",
+      "border-2 rounded-md has-[:disabled]:opacity-[32%] bg-goku",
       "has-[:hover]:border-hover-beerus",
       "has-[:focus]:border-piccolo",
       "has-[:disabled]:hover:border-beerus has-[:disabled]:focus:border-beerus has-[:disabled]:cursor-not-allowed",

@@ -41,7 +41,7 @@ Chip.defaultProps = {
   as: "button",
 };
 
-// I think the default variant is ghost with gohan bg
+// I think the default variant is ghost with goku bg
 
 // OTHER PROPS
 // onClick is just regular

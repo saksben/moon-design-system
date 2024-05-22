@@ -36,7 +36,7 @@ export const ChipBase = ({
         },
         variant: {
           ghost: "bg-transparent",
-          default: ["border border-beerus bg-gohan"],
+          default: ["border border-beerus bg-goku"],
         },
       },
     }

@@ -30,7 +30,7 @@ export const TextArea = ({
   const styleTextarea = cn(
     // Base styles
     "transition ease-in-out duration-200",
-    " w-full block text-md bg-gohan placeholder-trunks text-bulma outline-none resize-none",
+    " w-full block text-md bg-goku placeholder-trunks text-bulma outline-none resize-none",
     "disabled:cursor-not-allowed",
     readOnly && "cursor-not-allowed"
   );

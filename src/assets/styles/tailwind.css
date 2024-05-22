@@ -25,8 +25,8 @@
     --color-hit: 64, 166, 159;
     --color-heles: var(--main-popo);
     --color-beerus: 226, 226, 226;
-    --color-goku: 245, 245, 245;
-    --color-gohan: var(--main-goten);
+    --color-goku: var(--main-goten);
+    --color-gohan: 245, 245, 245;
     --color-zeno: var(--main-popo);
     --color-bulma: var(--main-popo);
     --color-trunks: var(--main-trunks);
