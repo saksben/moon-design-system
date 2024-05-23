@@ -1,60 +1,149 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Theme } from "@radix-ui/themes";
 import * as RadAccordion from "@radix-ui/react-accordion";
+import { cn } from "../../utils/cn";
+import { cva } from "class-variance-authority";
 
-export const Accordion = ({ ...props }) => {
+// To style the button when open (rotate, color), target the "svg" class (added to the icon) and then target Radix.ui's state data-attribute
+// defaultValue only works when singleOpen is true.
+
+const AccordionContext = React.createContext([null]);
+
+export const Accordion = ({
+  itemSize,
+  singleOpen,
+  className,
+  ...props
+}) => {
+  const stylesRoot = cn("text-bulma gap-2 flex flex-col");
+
+  const radType = singleOpen ? "single" : "multiple";
+
   return (
-    <div>
-      <Theme>
-        <RadAccordion.Root
-          type="single"
-          defaultValue="item-2"
-          collapsible
-          className="bg-red-500"
-        >
-          <RadAccordion.Item value="item-1">
-            <RadAccordion.Header>
-              <RadAccordion.Trigger>
-                <span>Trigger text</span>
-              </RadAccordion.Trigger>
-            </RadAccordion.Header>
-            <RadAccordion.Content>
-              <span>Expanded</span>
-            </RadAccordion.Content>
-          </RadAccordion.Item>
-        </RadAccordion.Root>
-      </Theme>
-    </div>
+    <AccordionContext.Provider value={[itemSize]}>
+      <RadAccordion.Root
+        type={radType}
+        collapsible
+        className={cn(stylesRoot, className)}
+        {...props}
+      >
+      </RadAccordion.Root>
+    </AccordionContext.Provider>
   );
 };
 
+Accordion.displayName = "Accordion";
+
 Accordion.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
-  onClick: PropTypes.func,
+  itemSize: PropTypes.oneOf(["sm", "md", "lg", "xl"]),
+  singleOpen: PropTypes.bool,
+  defaultValue: PropTypes.string,
+  value: PropTypes.arrayOf(PropTypes.string),
+  onValueChange: PropTypes.func,
+  className: PropTypes.string,
 };
 
 Accordion.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: "medium",
-  onClick: undefined,
+  itemSize: "md",
+  singleOpen: false,
+};
+
+Accordion.Item = ({ className, disabled, ...props }) => {
+  const stylesItem = cn(
+    "border border-beerus rounded-md bg-goku",
+    disabled && "pointer-events-none opacity-[0.32]"
+  )
+
+  return (
+    <>
+      <div className={cn(disabled && "cursor-not-allowed")}>
+        <RadAccordion.Item
+          className={cn(stylesItem, className)}
+          disabled={disabled}
+          {...props}
+        ></RadAccordion.Item>
+      </div>
+    </>
+  );
+};
+
+Accordion.Item.displayName = "Accordion.Item";
+
+Accordion.Item.propTypes = {
+  value: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  className: PropTypes.string,
+};
+
+Accordion.Item.defaultProps = {
+  disabed: false,
+};
+
+Accordion.Header = ({ className, ...props }) => {
+
+  const stylesHeader = cn("accordion-header")
+
+  return (
+    <>
+      <RadAccordion.Header
+        className={cn(stylesHeader, className)}
+        {...props}
+      ></RadAccordion.Header>
+    </>
+  );
+};
+
+Accordion.Header.displayName = "Accordion.Header";
+
+Accordion.Header.propTypes = {
+  className: PropTypes.string,
+};
+
+Accordion.Content = ({ className, ...props }) => {
+
+  const stylesContent = cn("p-2 pt-3 text-sm border-t border-beerus");
+  return (
+    <>
+      <RadAccordion.Content
+        className={cn(stylesContent, className)}
+        {...props}
+      ></RadAccordion.Content>
+    </>
+  );
+};
+
+Accordion.Content.displayName = "Accordion.Content";
+
+Accordion.Content.propTypes = {
+  className: PropTypes.string,
+};
+
+Accordion.Button = ({ className, ...props }) => {
+  const [itemSize] = React.useContext(AccordionContext);
+
+  const stylesButton = cva(cn("flex w-full justify-between text-start items-center font-bold text-bulma"), {
+    variants: {
+      itemSize: {
+        sm: "p-2 gap-2 text-xs",
+        md: "p-2 pl-3 gap-4 text-sm",
+        lg: "p-3 gap-3 text-sm",
+        xl: "p-4 gap-4 text-md",
+      },
+    },
+  });
+
+  return (
+    <>
+      <RadAccordion.Trigger
+        className={cn(stylesButton({ itemSize }), className)}
+        {...props}
+      ></RadAccordion.Trigger>
+    </>
+  );
+};
+
+Accordion.Button.displayName = "Accordion.Button";
+
+Accordion.Button.propTypes = {
+  className: PropTypes.string,
 };
