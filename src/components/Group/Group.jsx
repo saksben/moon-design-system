@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Input } from "../Input/Input";
 import { InsetInput } from "../InsetInput/InsetInput";
-// import { NativeSelect } from "../NativeSelect/NativeSelect";
-// import { InsetNativeSelect } from "../InsetNativeSelect";
+import { NativeSelect } from "../NativeSelect/NativeSelect";
+import { InsetNativeSelect } from "../InsetNativeSelect/InsetNativeSelect";
 import { cn } from "../../utils/cn";
 
 // TODO: Will need to return once NativeSelect and InsetNativeSelect are made
@@ -118,8 +118,8 @@ Group.LastInput.displayName = "Group.LastInput";
 Group.LastInput.propTypes = { className: PropTypes.string };
 
 // FirstInsetInput component
-Group.FirstInsetInput = ({ className, ...props }) => {
-  const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+Group.FirstInsetInput = ({ className, label, ...props }) => {
+  const { disabled, error, readOnly, orientation } = React.useContext(GroupContext);
   // Styles for InsetInput
   const styleInput = cn(
     orientation === "horizontal" && "rounded-r-none",
@@ -131,9 +131,10 @@ Group.FirstInsetInput = ({ className, ...props }) => {
       disabled={disabled}
       error={error}
       readOnly={readOnly}
-      size={size}
       {...props}
-    />
+    >
+      <InsetInput.Label>{label}</InsetInput.Label>
+    </InsetInput>
   );
 };
 
@@ -142,8 +143,8 @@ Group.FirstInsetInput.displayName = "Group.FirstInsetInput";
 Group.FirstInsetInput.propTypes = { className: PropTypes.string };
 
 // LastInsetInput component
-Group.LastInsetInput = ({ className, ...props }) => {
-  const { disabled, error, readOnly, size, orientation } = React.useContext(GroupContext);
+Group.LastInsetInput = ({ className, label, ...props }) => {
+  const { disabled, error, readOnly, orientation } = React.useContext(GroupContext);
   // Styles for InsetInput
   const styleInput = cn(
     orientation === "horizontal" && "rounded-l-none",
@@ -155,9 +156,10 @@ Group.LastInsetInput = ({ className, ...props }) => {
       disabled={disabled}
       error={error}
       readOnly={readOnly}
-      size={size}
       {...props}
-    />
+    >
+      <InsetInput.Label>{label}</InsetInput.Label>
+    </InsetInput>
   );
 };
 

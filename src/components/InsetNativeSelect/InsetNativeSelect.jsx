@@ -21,7 +21,7 @@ export const InsetNativeSelect = ({
   )
 
   return (
-    <div className="relative cursor-default">
+    <div className="relative cursor-default flex-grow">
       <NativeSelect
         error={error}
         disabled={disabled}

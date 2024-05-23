@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { cn } from "../../utils/cn";
 import React from "react";
 
-// TODO: return when NativeSelect and InsetNativeSelect are complete
+// TODO: Context from Form and props from FOrm.Item don't get passed unless to direct descendants for some reason. Bandaid is to either set manually or only have direct descendants
 
-const FormContext = React.createContext([null])
+export const FormContext = React.createContext([null])
 
 export const Form = ({ children, className, size, ...props }) => {
   return (

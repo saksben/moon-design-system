@@ -19,7 +19,7 @@ export const Input = ({
     // Base styles
     [
       "transition-all ease-in-out duration-200",
-      "border-2 rounded-md has-[:disabled]:opacity-[32%] bg-goku",
+      "border-2 rounded-md has-[:disabled]:opacity-[32%] bg-goku flex items-center",
       "has-[:hover]:border-hover-beerus",
       "has-[:focus]:border-piccolo",
       "has-[:disabled]:hover:border-beerus has-[:disabled]:focus:border-beerus has-[:disabled]:cursor-not-allowed",
@@ -35,9 +35,9 @@ export const Input = ({
     {
       variants: {
         size: {
-          sm: "py-1 px-2",
-          md: "px-3 py-2",
-          lg: "p-3",
+          sm: "h-8 py-1 px-2",
+          md: "h-10 px-3 py-2",
+          lg: "h-12 p-3",
         },
       },
     }

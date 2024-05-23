@@ -14,7 +14,7 @@ export const NativeSelect = ({
   ...props
 }) => {
   // Styles for wrapper
-  const stylesDiv = "w-full max-w-md relative";
+  const stylesDiv = "max-w-md relative flex-grow";
 
   // Styles for select
   const stylesSelect = cva(

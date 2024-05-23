@@ -5,6 +5,8 @@ import React from "react";
 
 // TODO: fix Label returning on blur when there is a value typed
 
+// NOTE: needs a label when used or it will be screwed up
+
 // Context to pass to Label
 const InputContext = React.createContext({ isFocused: false, type: "text", value: false, readOnly: false});
 
@@ -35,7 +37,7 @@ export const InsetInput = ({
   const stylesDiv = cn("relative");
 
   // Styles for Input
-  const stylesInput = cn("p-6 pl-[1.125rem]", children && "pb-2");
+  const stylesInput = cn("h-16 px-6 pt-6 pl-[1.125rem]", children && "pb-2");
 
   // Sets focus onFocus for Label
   const handleFocus = () => {

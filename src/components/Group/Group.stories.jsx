@@ -34,13 +34,14 @@ export const Direction = {
 
 export const DifferentOptions = {
   render: (args) => (
+    <>
     <div className="flex flex-col xl:flex-row gap-6 justify-center items-center">
       <div className="flex flex-col gap-6 justify-center items-justify">
         <Group orientation="horizontal" {...args}>
           <Group.FirstInput placeholder="First input" />
           <Group.LastInput placeholder="Last input" />
         </Group>
-        {/* <Group orientation="horizontal" {...args}>
+        <Group orientation="horizontal" {...args}>
           <Group.FirstInput placeholder="First input" />
           <Group.LastSelect>
             <option value="">Last select</option>
@@ -48,8 +49,8 @@ export const DifferentOptions = {
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </Group.LastSelect>
-        </Group> */}
-        {/* <Group orientation="horizontal" {...args}> 
+        </Group>
+        <Group orientation="horizontal" {...args}> 
           <Group.FirstSelect>
             <option value="">First select</option>
             <option value="1">Option 1</option>
@@ -57,8 +58,8 @@ export const DifferentOptions = {
             <option value="3">Option 3</option>
           </Group.FirstSelect>
           <Group.LastInput placeholder="Last input" />
-        </Group> */}
-        {/* <Group orientation="horizontal" {...args}>
+        </Group>
+        <Group orientation="horizontal" {...args}>
           <Group.FirstSelect>
             <option value="">First select</option>
             <option value="1">Option 1</option>
@@ -71,30 +72,30 @@ export const DifferentOptions = {
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </Group.LastSelect>
-        </Group> */}
+        </Group>
       </div>
       <div className="flex flex-col gap-6 justify-center items-justify">
         <Group orientation="horizontal" {...args}>
-          <Group.FirstInsetInput placeholder="First inset input" />
-          <Group.LastInsetInput placeholder="Last inset input" />
+            <Group.FirstInsetInput label='First Inset Input' placeholder="First inset input" />
+            <Group.LastInsetInput label='Last Inset Input' placeholder="Last inset input" />
         </Group>
-        {/* <Group orientation="horizontal" {...args}>
-          <Group.FirstInsetInput placeholder="First inset input" />
-          <Group.LastInsetSelect label="Last inset select">
+        <Group orientation="horizontal" {...args}>
+          <Group.FirstInsetInput label='First Inset Input' placeholder="First inset input" />
+          <Group.LastInsetSelect label="Last inset select" className='w-full'>
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </Group.LastInsetSelect>
-        </Group> */}
-        {/* <Group orientation="horizontal" {...args}>
+        </Group>
+        <Group orientation="horizontal" {...args}>
           <Group.FirstInsetSelect label="First inset select">
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </Group.FirstInsetSelect>
-          <Group.LastInsetInput placeholder="Last inset input" />
-        </Group> */}
-        {/* <Group orientation="horizontal" {...args}>
+          <Group.LastInsetInput label='Last Inset Input' placeholder="Last inset input" />
+        </Group>
+        <Group orientation="horizontal" {...args}>
           <Group.FirstInsetSelect label="First inset select">
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
@@ -105,9 +106,10 @@ export const DifferentOptions = {
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </Group.LastInsetSelect>
-        </Group> */}
+        </Group>
+       </div>
       </div>
-    </div>
+    </>
   ),
 };
 
@@ -127,8 +129,8 @@ export const Sizes = {
         <Group.LastInput placeholder="Last input" />
       </Group>
       <Group {...args}>
-        <Group.FirstInsetInput placeholder="First inset input" />
-        <Group.LastInsetInput placeholder="Last inset input" />
+        <Group.FirstInsetInput label='First Inset Input' placeholder="First inset input" />
+        <Group.LastInsetInput label='Last Inset Input' placeholder="Last inset input" />
       </Group>
     </div>
   ),
