@@ -19,7 +19,7 @@ export const NativeSelect = ({
   // Styles for select
   const stylesSelect = cva(
     cn(
-      "box-border w-full appearance-none rounded-lg border-2 border-beerus bg-goku text-bulma text-sm cursor-pointer placeholder:text-chichi",
+      "box-border transition-colors ease-in-out duration-200 w-full appearance-none rounded-lg border-2 border-beerus bg-goku text-bulma text-sm cursor-pointer placeholder:text-chichi",
       "focus:outline-none focus:border-piccolo hover:border-hover-beerus",
       error && "border-chichi hover:border-chichi focus:border-chichi",
       (disabled || readOnly) &&
