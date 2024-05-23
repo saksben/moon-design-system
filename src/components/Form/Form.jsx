@@ -6,6 +6,7 @@ import React from "react";
 
 export const FormContext = React.createContext([null])
 
+// Form component
 export const Form = ({ children, className, size, ...props }) => {
   return (
     <>
@@ -29,8 +30,10 @@ Form.defaultProps = {
   size: "md",
 };
 
+// Item component
 Form.Item = ({ children, className, disabled, error, ...props }) => {
-    const [size] = React.useContext(FormContext)
+  const [size] = React.useContext(FormContext)
+  // Gives the props to components, skips Label so it can work
   const child = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
         return React.cloneElement(child, {

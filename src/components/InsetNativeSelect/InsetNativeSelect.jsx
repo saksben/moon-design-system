@@ -11,10 +11,12 @@ export const InsetNativeSelect = ({
   placeholder,
   ...props
 }) => {
+  // Styles for select
   const stylesSelect = cn(
     "h-16 pt-6 px-4 text-md"
   );
 
+  // Styles for label
   const stylesLabel = cn(
     "text-xs text-trunks absolute top-0 px-4 pt-4 pointer-events-none",
     disabled && "opacity-[0.32]"
