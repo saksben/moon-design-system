@@ -60,7 +60,7 @@ export const TagsInput = ({
           onChange={handleChange}
           value={value}
           onKeyDown={handleKeyDown}
-          className={cn(className)}
+          className={cn(className, "h-fit")} // Needs Input to not have height in order to add Tag inside
           {...props} // NOTE: console logs an error that this generates invalid props "0" and "1" for some reason. Removing {...props} fixes it.
         >
           <div className={cn(stylesChildWrapper)}>

@@ -6,7 +6,7 @@ import ControlsClose from "../../assets/icons/components/ControlsClose";
 // Alert component
 export const Alert = ({ className, ...props }) => {
   // Styles for wrapper
-  const stylesWrapper = cn("bg-goku text-bulma text-sm w-full relative");
+  const stylesWrapper = cn("bg-goku text-bulma text-sm w-full relative rounded-md");
   //   Styles for Alert
   const stylesAlert = cn("p-4 flex flex-col justify-center gap-2 rounded-lg");
   return (

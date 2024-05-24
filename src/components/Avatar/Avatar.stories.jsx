@@ -62,7 +62,7 @@ export const OfflineStatus = {
     <>
       <Avatar {...args}>
         md
-        <Avatar.Status {...args} />
+        <Avatar.Status className='bg-trunks' {...args} />
       </Avatar>
     </>
   ),
