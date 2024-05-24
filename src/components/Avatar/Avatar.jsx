@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 
 export const Avatar = ({ children, className, imageUrl, size, ...props }) => {
   const stylesDiv = cva(
-    "relative border rounded-lg flex justify-center items-center font-bold",
+    "relative border border-beerus rounded-lg flex justify-center items-center font-bold text-bulma",
     {
       variants: {
         size: {
@@ -54,7 +54,7 @@ Avatar.defaultProps = {
 Avatar.Status = ({ className, position, ...props }) => {
   const stylesIndicator = cn(
     "absolute bottom-0 right-0",
-    "rounded-full size-3 bg-roshi border-2 border-goku",
+    "rounded-full size-3 bg-roshi border-2 border-gohan",
     position["vertical"] === "top" ? "top-0" : "bottom-0",
     position["horizontal"] === "left" ? "left-0" : "right-0"
   );

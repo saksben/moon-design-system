@@ -53,7 +53,7 @@ Radio.propTypes = {
 const OptionContext = React.createContext([false, null]);
 
 Radio.Option = ({ children, disabled, value, className, ...props }) => {
-  const stylesField = cn("flex items-center gap-2 hover:cursor-pointer", disabled && "opacity-[0.32]");
+  const stylesField = cn("flex items-center gap-2 hover:cursor-pointer text-bulma", disabled && "opacity-[0.32]");
 
   return (
     <>

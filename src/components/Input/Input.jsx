@@ -44,7 +44,7 @@ export const Input = ({
   );
 
   // Style for fade-in when input is an InsetInput (for floating label)
-  const styleFade = cn([
+  const styleFade = cn(["w-full",
     fade &&
       !readOnly &&
       !disabled &&

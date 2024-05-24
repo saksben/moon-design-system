@@ -22,7 +22,7 @@ export const WithPin = ({ ...props }) => {
 
 export const WithLabels = () => {
   return (
-    <div className="flex flex-col w-full gap-1 text-2xs font-medium uppercase">
+    <div className="flex flex-col w-full gap-1 text-2xs font-medium uppercase text-bulma">
       <div className="flex gap-1 justify-between">
         <span>0%</span>
         <span>100%</span>

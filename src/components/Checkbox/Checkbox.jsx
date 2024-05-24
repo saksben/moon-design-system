@@ -37,7 +37,7 @@ export const Checkbox = ({
 
   // Checkbox base styles
   const styleCheckbox = cn(
-    "inline-block flex items-center justify-center size-svg-2 rounded-[4px] text-goku transition ease-in-out duration-200",
+    "inline-block flex items-center justify-center size-svg-2 rounded-[4px] text-goten transition ease-in-out duration-200",
     // Variant styles
     !check[0]
       ? "bg-transparent border-[1.5px] border-trunks"

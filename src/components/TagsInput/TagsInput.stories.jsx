@@ -72,7 +72,7 @@ const TagsInputWithLogic = ({ size }) => {
 };
 
 export const DifferentSizes = ({...args}) => (
-  <div className="w-full max-w-sm">
+  <div className="w-full max-w-sm text-bulma">
     <p>Small</p>
     <TagsInputWithLogic size="sm" {...args} />
     <p>Medium (default)</p>

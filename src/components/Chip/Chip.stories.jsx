@@ -25,7 +25,7 @@ export const Icons = ({ ...args }) => {
   };
   return (
     <>
-      <div className="flex flex-wrap items-center justify-start gap-2 w-full">
+      <div className="flex flex-wrap items-center justify-start gap-2 w-full text-bulma">
         <p>Small:</p>
         <Chip
           {...sharedProps}
@@ -60,7 +60,7 @@ export const Icons = ({ ...args }) => {
           {...args}
         />
       </div>
-      <div className="flex flex-wrap items-center justify-start gap-2 w-full">
+      <div className="flex flex-wrap items-center justify-start gap-2 w-full text-bulma">
         <p>Medium:</p>
         <Chip
           {...sharedProps}
