@@ -9,14 +9,17 @@ import { cva } from "class-variance-authority";
 
 const AccordionContext = React.createContext([null]);
 
+// Root component
 export const Accordion = ({
   itemSize,
   singleOpen,
   className,
   ...props
 }) => {
+  // Styles for Root
   const stylesRoot = cn("text-bulma gap-2 flex flex-col");
 
+  // Converts {singleOpen} into Radix's {type}
   const radType = singleOpen ? "single" : "multiple";
 
   return (
@@ -48,7 +51,9 @@ Accordion.defaultProps = {
   singleOpen: false,
 };
 
+// Item component
 Accordion.Item = ({ className, disabled, ...props }) => {
+  // Styles for Item
   const stylesItem = cn(
     "border border-beerus rounded-md bg-goku",
     disabled && "pointer-events-none opacity-[0.32]"
@@ -79,8 +84,11 @@ Accordion.Item.defaultProps = {
   disabed: false,
 };
 
+// Header component
 Accordion.Header = ({ className, ...props }) => {
 
+  // Styles for Header
+  // Includes custom style in tailwind.css for rotating the dropdown icon
   const stylesHeader = cn("accordion-header")
 
   return (
@@ -99,8 +107,10 @@ Accordion.Header.propTypes = {
   className: PropTypes.string,
 };
 
+// Content component
 Accordion.Content = ({ className, ...props }) => {
 
+  // Styles for Content
   const stylesContent = cn("p-2 pt-3 text-sm border-t border-beerus");
   return (
     <>
@@ -118,9 +128,11 @@ Accordion.Content.propTypes = {
   className: PropTypes.string,
 };
 
+// Button component
 Accordion.Button = ({ className, ...props }) => {
   const [itemSize] = React.useContext(AccordionContext);
 
+  // Styles for Button
   const stylesButton = cva(cn("flex w-full justify-between text-start items-center font-bold text-bulma"), {
     variants: {
       itemSize: {
