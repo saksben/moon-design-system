@@ -2,8 +2,10 @@ import PropTypes from "prop-types";
 import { cn } from "../../utils/cn";
 import { cva } from "class-variance-authority";
 
+// Avatar component
 export const Avatar = ({ children, className, imageUrl, size, ...props }) => {
-  const stylesDiv = cva(
+  // Styles for Avatar
+  const stylesAvatar = cva(
     "relative border border-beerus rounded-lg flex justify-center items-center font-bold text-bulma",
     {
       variants: {
@@ -19,6 +21,7 @@ export const Avatar = ({ children, className, imageUrl, size, ...props }) => {
     }
   );
 
+  // Styles for Icon
   const stylesIcon = cn(
     "flex justify-center items-center uppercase",
     size === "xs" ? "size-svg-2" : size === "2xl" ? "size-svg-4" : "size-svg-3"
@@ -26,7 +29,8 @@ export const Avatar = ({ children, className, imageUrl, size, ...props }) => {
 
   return (
     <div
-      className={cn(stylesDiv({ size }), className)}
+      className={cn(stylesAvatar({ size }), className)}
+      // Lets user upload image as bg
       style={{
         backgroundImage: `url(${imageUrl})`,
         backgroundSize: "cover",
@@ -51,6 +55,7 @@ Avatar.defaultProps = {
   size: "md",
 };
 
+// Status component
 Avatar.Status = ({ className, position, ...props }) => {
   const stylesIndicator = cn(
     "absolute bottom-0 right-0",
