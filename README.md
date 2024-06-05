@@ -1,8 +1,16 @@
-# React + Vite
+# Moon Design System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was an opportunity for me to learn the process between design and development production. I handled a Figma file that described desired styles and props, and was able to create those component designs as developed components that can be used in other projects. 
 
-Currently, two official plugins are available:
+- Developed 20 React components for external use after being made available from design team
+- Incorporated component styling to reflect fidelity of Figma design system files, including dark and light themes
+- Implemented all requested props and used Storybook to display functionality
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Basic Instructions
+Visit the Chromatic Storybook at `https://663c2588302bd8a99f19c4bd-jwbhyqceek.chromatic.com/`
+
+OR
+
+Clone the project: `git clone https://github.com/saksben/moon-design-system.git`
+
+Run `npm run storybook`
